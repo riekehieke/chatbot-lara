@@ -3,7 +3,7 @@ document.addEventListener('init', function (event) {
 });
 document.addEventListener("keyup", function () {
   var regCode = document.querySelector("ons-input").value;
-  if (regCode === "123") {
-    document.querySelector('#nav').pushPage('page2.html', { data: { title: 'Page 2' } });
+  if (regCode === "1") {
+    document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Page 2' } });
   }
 });
