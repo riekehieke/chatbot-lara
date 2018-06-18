@@ -3,6 +3,10 @@
   font-family: 'Encode Sans Semi Expanded', sans-serif;
 }
 
+.toolbar {
+  height: 60px;
+}
+
 /* Index */
 #start-logo {
   display: flex;
@@ -29,9 +33,13 @@
 }
 
 /* Start Seite */
+.toolbar-mit-logo {
+  background-color: #fdfdfd;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+}
 #logo-toolbar {
-  height: 20px;
-  margin: 12px 0;
+  height: 30px;
+  margin: 15px 0;
 }
 #buttons {
   display: flex;
@@ -73,5 +81,5 @@
 
 .anrede {
   text-align: center;
-  margin: 5% 0 0 0;
+  margin: 10% 0 0 0;
 }
