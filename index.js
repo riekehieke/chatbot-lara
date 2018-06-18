@@ -15,4 +15,9 @@ document.addEventListener('init', function (event) {
     };
   }
 
+  if (page.id === 'start') {
+    page.querySelector('#termin-button').onclick = function () {
+      document.querySelector('#nav').pushPage('pages/termin.html', { data: { title: 'Arzttermin' } });
+    };
+  }
 });
