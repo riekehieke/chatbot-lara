@@ -1,4 +1,7 @@
-#start-logo {
+.text {
+  font-family: 'Encode Sans Semi Expanded', sans-serif;
+}
+  #start-logo {
   display: flex;
   justify-content: center;
   height: 115px;
