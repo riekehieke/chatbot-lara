@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>health-bot</title>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/onsen-css-components.min.css">
+    <link rel="stylesheet" href="index.css">
+  </head>
+
+  <body>
+    <ons-page id="start">
+      <ons-toolbar style="position: fixed">
+        <div class="center">
+          <ons-toolbar-button>
+            <ons-icon icon="md-home"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="right">
+          <ons-toolbar-button>
+            <ons-icon icon="md-more-vert" style="margin-right: 15px;"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+      </ons-toolbar>
+
+      <img src="assets/health-icon.svg" alt="health-icon" style="height: 200px;">
+      <div style="text-align: center; margin-top: 30px;">
+        <p>
+          <ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>
+        </p>
+        <p style="margin-top: 30px;">
+          <ons-button onclick="login()">Sign in</ons-button>
+        </p>
+      </div>
+    </ons-page>
+  </body>
+
+</html>
