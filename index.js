@@ -12,6 +12,12 @@ document.addEventListener('init', function (event) {
   if (page.id === 'start') {
     page.querySelector('#unwohl-button').onclick = function () {
       document.querySelector('#nav').pushPage('pages/unwohl.html', { data: { title: 'Unwohl' } });
+      setTimeout(function () {
+        var beschwerden = document.getElementById('beschwerden')
+        beschwerden.style.opacity = "1.0";
+        var input = document.getElementById('input')
+        input.style.opacity = "1.0"
+      }, 1500);
     };
   }
 
