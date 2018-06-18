@@ -1,3 +1,23 @@
-img {
-
+#start-logo {
+  display: flex;
+  justify-content: center;
+  height: 115px;
+  margin: 50px 0 50px 0;
+}
+#start-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 70px 0 0 0;
+}
+#start-hallo {
+  text-align: center;
+}
+.text-klein {
+  font-size: 0.7rem;
+  text-align: center;
+  margin: 30px 0 0 0;
+}
+.text-klein a {
+  color: #000000;
 }

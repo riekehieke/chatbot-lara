@@ -15,28 +15,35 @@
 
   <body>
     <ons-page id="start">
-      <ons-toolbar style="position: fixed">
-        <div class="center">
-          <ons-toolbar-button>
-            <ons-icon icon="md-home"></ons-icon>
-          </ons-toolbar-button>
-        </div>
+      <ons-toolbar modifier="transparent" style="position: fixed">
         <div class="right">
           <ons-toolbar-button>
-            <ons-icon icon="md-more-vert" style="margin-right: 15px;"></ons-icon>
+            <ons-icon icon="md-more-vert" style="margin-right: 15px;" size="16px"></ons-icon>
           </ons-toolbar-button>
         </div>
       </ons-toolbar>
 
-      <img src="assets/health-icon.svg" alt="health-icon" style="height: 200px;">
-      <div style="text-align: center; margin-top: 30px;">
+      <div id="start-logo">
+        <img src="assets/logo.svg" alt="health-icon">
+      </div>
+      <ons-row>
+        <ons-col width="70px"></ons-col>
+        <ons-col vertical-align="center">
+          <h1 id="start-hallo">Hallo!</h1>
+          <p>Bitte geben Sie den einmaligen Registrierungscode ein, den Sie in dem Schreiben Ihrer Krankenversicherung erhalten
+            haben!
+          </p>
+        </ons-col>
+        <ons-col width="70px"></ons-col>
+      </ons-row>
+      <div id="start-form">
         <p>
-          <ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>
-        </p>
-        <p style="margin-top: 30px;">
-          <ons-button onclick="login()">Sign in</ons-button>
+          <ons-input id="password" modifier="underbar material" type="text" placeholder="Registrierungscode" float></ons-input>
         </p>
       </div>
+      <p class="text-klein">Noch keinen Code? Weitere Infos gibt es
+        <a href="https://maxmschneider.com/">hier</a>.
+      </p>
     </ons-page>
   </body>
 
