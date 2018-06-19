@@ -29,3 +29,12 @@ document.addEventListener('init', function (event) {
     };
   }
 });
+
+// Beschwerden analysieren
+function Beschwerden() {
+  var input = document.getElementById("beschwerden-input").value
+  var bubble = document.getElementById('user-beschwerden')
+  bubble.innerHTML = "<p>" + input + "</p>"
+  bubble.style.opacity = "1"
+  document.getElementById("beschwerden-input").value = ''
+}
