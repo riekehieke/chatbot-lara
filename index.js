@@ -81,9 +81,40 @@ function Beschwerden() {
 }
 
 function Migraene() {
-  console.log("du hast migräne")
+  var check1 = document.getElementById('check-1').checked
+  var check2 = document.getElementById('check-2').checked
+  var check3 = document.getElementById('check-3').checked
+  var label1 = "eingeschränkte Sicht"
+  var label2 = "Magen-Darm-Beschwerden"
+  var label3 = "Appetitlosigkeit"
+  // Auswahl Liste in Chat anzeigen
+  if (check1 == true) {
+    var user = "<p>Ich habe " + label1 + ".</p>"
+  }
+  if (check2 == true) {
+    var user = "<p>Ich habe " + label2 + ".</p>"
+  }
+  if (check3 == true) {
+    var user = "<p>Ich habe " + label3 + ".</p>"
+  }
+  if (check1 == true && check2 == true) {
+    var user = "<p>Ich habe " + label1 + " und " + label2 + ".</p>"
+  }
+  if (check1 == true && check3 == true) {
+    var user = "<p>Ich habe " + label1 + " und " + label3 + ".</p>"
+  }
+  if (check2 == true && check3 == true) {
+    var user = "<p>Ich habe " + label2 + " und " + label3 + ".</p>"
+  }
+  if (check1 == true && check2 == true && check3 == true) {
+    var user = "<p>Ich habe " + label1 + ", " + label2 + " und " + label3 + ".</p>"
+  }
+  document.getElementById("user-liste").innerHTML = user
   document.getElementById("migraene-fab").style.display = "none"
-  document.getElementById("diagnose-migraene").style.opacity = "1"
+  // Warnung anzeigen
+  setTimeout(function () {
+    document.getElementById("diagnose-migraene").style.opacity = "1"
+  }, 1000)
 }
 
 function Meni() {
