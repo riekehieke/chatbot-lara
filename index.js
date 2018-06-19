@@ -53,6 +53,7 @@ function Beschwerden() {
       document.getElementById('label-check-2').innerHTML = "Magen-Darm-Beschwerden"
       document.getElementById('label-check-3').innerHTML = "Appetitlosigkeit"
       document.getElementById("symptome-liste").style.opacity = "1"
+      document.getElementById("symptome-liste").scrollIntoView({ behavior: "smooth" });
       document.getElementById("migraene-fab").style.display = "block"
       return;
     } else if (symptome2.some(el => user.includes(el))) {
@@ -62,6 +63,7 @@ function Beschwerden() {
       document.getElementById('label-check-2').innerHTML = "Kopfschmerzen"
       document.getElementById('label-check-3').innerHTML = "Übelkeit"
       document.getElementById("symptome-liste").style.opacity = "1"
+      document.getElementById("symptome-liste").scrollIntoView({ behavior: "smooth" });
       document.getElementById("meni-fab").style.display = "block"
       return;
     } else {
@@ -90,30 +92,44 @@ function Migraene() {
   // Auswahl Liste in Chat anzeigen
   if (check1 == true) {
     var user = "<p>Ich habe " + label1 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
   }
   if (check2 == true) {
     var user = "<p>Ich habe " + label2 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
   }
   if (check3 == true) {
     var user = "<p>Ich habe " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
   }
   if (check1 == true && check2 == true) {
     var user = "<p>Ich habe " + label1 + " und " + label2 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
   }
   if (check1 == true && check3 == true) {
     var user = "<p>Ich habe " + label1 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
   }
   if (check2 == true && check3 == true) {
     var user = "<p>Ich habe " + label2 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
   }
   if (check1 == true && check2 == true && check3 == true) {
     var user = "<p>Ich habe " + label1 + ", " + label2 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
   }
-  document.getElementById("user-liste").innerHTML = user
   document.getElementById("migraene-fab").style.display = "none"
   // Warnung anzeigen
   setTimeout(function () {
     document.getElementById("diagnose-migraene").style.opacity = "1"
+    document.getElementById("diagnose-migraene").scrollIntoView({ behavior: "smooth" });
   }, 1000)
 }
 
