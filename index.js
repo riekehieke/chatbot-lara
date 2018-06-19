@@ -129,15 +129,66 @@ function Migraene() {
   document.getElementById("migraene-fab").style.display = "none"
   // Warnung anzeigen
   setTimeout(function () {
-    document.getElementById("diagnose-migraene").style.opacity = "1"
+    document.getElementById("diagnose-migraene").style.display = "block"
     document.getElementById("diagnose-migraene").scrollIntoView({ behavior: "smooth" });
   }, 1000)
   // Zurück zum Start
   setTimeout(function () {
     document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
-  }, 4000)
+  }, 6000)
 }
 
 function Meni() {
-  console.log("du hast meningitis")
+  var check1 = document.getElementById('check-1').checked
+  var check2 = document.getElementById('check-2').checked
+  var check3 = document.getElementById('check-3').checked
+  var label1 = "Gliederschmerzen"
+  var label2 = "Kopfschmerzen"
+  var label3 = "Übelkeit"
+  // Auswahl Liste in Chat anzeigen
+  if (check1 == true) {
+    var user = "<p>Ich habe " + label1 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check2 == true) {
+    var user = "<p>Ich habe " + label2 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check3 == true) {
+    var user = "<p>Ich habe " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check2 == true) {
+    var user = "<p>Ich habe " + label1 + " und " + label2 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check3 == true) {
+    var user = "<p>Ich habe " + label1 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check2 == true && check3 == true) {
+    var user = "<p>Ich habe " + label2 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check2 == true && check3 == true) {
+    var user = "<p>Ich habe " + label1 + ", " + label2 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  document.getElementById("meni-fab").style.display = "none"
+  // Warnung anzeigen
+  setTimeout(function () {
+    document.getElementById("diagnose-meni").style.display = "block"
+    document.getElementById("diagnose-meni").scrollIntoView({ behavior: "smooth" });
+  }, 1000)
+  // Zurück zum Start
+  setTimeout(function () {
+    document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
+  }, 6000)
 }
