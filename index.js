@@ -5,6 +5,7 @@ function regCode() {
   }
 }
 
+
 document.addEventListener('init', function (event) {
   var page = event.target;
 
@@ -131,6 +132,10 @@ function Migraene() {
     document.getElementById("diagnose-migraene").style.opacity = "1"
     document.getElementById("diagnose-migraene").scrollIntoView({ behavior: "smooth" });
   }, 1000)
+  // Zurück zum Start
+  setTimeout(function () {
+    document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
+  }, 4000)
 }
 
 function Meni() {
