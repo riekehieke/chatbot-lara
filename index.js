@@ -39,17 +39,35 @@ function Beschwerden() {
   document.getElementById("beschwerden-input").value = ""
   document.getElementById("beschwerden-input").style.opacity = "0"
   document.getElementById("beschwerden-fab").style.opacity = "0"
+
   //Antwort auf Input
   setTimeout(function () {
     var user = document.getElementById("p-user-beschwerden").innerHTML
     var bubble = document.getElementById("bot-nachfrage")
-    var symptome1 = ["Kopfschmerzen", "hinter", "Augen"]
+    var symptome1 = ["Kopfschmerzen", "hinter", "Augen", "morgens", "abends"]
+    var symptome2 = ["Fieber", "steif", "Nacken"]
     if (symptome1.some(el => user.includes(el))) {
       bubble.innerHTML = "<p>Haben Sie außerdem eines oder mehrere dieser Symptome?</p>"
       bubble.style.opacity = "1"
+      document.getElementById('label-check-1').innerHTML = "Eingeschränkte Sicht"
+      document.getElementById('label-check-2').innerHTML = "Magen-Darm-Beschwerden"
+      document.getElementById('label-check-3').innerHTML = "Appetitlosigkeit"
+      document.getElementById("symptome-liste").style.opacity = "1"
+      document.getElementById("migraene-fab").style.display = "block"
+      return;
+    } else if (symptome2.some(el => user.includes(el))) {
+      bubble.innerHTML = "<p>Haben Sie außerdem eines oder mehrere dieser Symptome?</p>"
+      bubble.style.opacity = "1"
+      document.getElementById('label-check-1').innerHTML = "Gliederschmerzen"
+      document.getElementById('label-check-2').innerHTML = "Kopfschmerzen"
+      document.getElementById('label-check-3').innerHTML = "Übelkeit"
+      document.getElementById("symptome-liste").style.opacity = "1"
+      document.getElementById("meni-fab").style.display = "block"
+      return;
     } else {
       bubble.innerHTML = "<p>Ich kann Ihre Symptome leider nicht auswerten. Bitte versuchen Sie es erneut.</p>"
       bubble.style.opacity = "1"
+      // Zurück zu Symptom-Eingabe
       setTimeout(function () {
         document.getElementById("user-beschwerden").innerHTML = ""
         document.getElementById("user-beschwerden").style.opacity = "0"
@@ -60,4 +78,14 @@ function Beschwerden() {
       }, 2000)
     }
   }, 1500)
+}
+
+function Migraene() {
+  console.log("du hast migräne")
+  document.getElementById("migraene-fab").style.display = "none"
+  document.getElementById("diagnose-migraene").style.opacity = "1"
+}
+
+function Meni() {
+  console.log("du hast meningitis")
 }

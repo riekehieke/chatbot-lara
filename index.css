@@ -106,20 +106,24 @@
 
 .bot-msg {
   background-color:#ffffff;
-  /* color: #ffffff; */
   box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
   border-radius: 18px 18px 18px 0;
   width: 50%;
   height: 8%;
-  /* text-align: center; */
+  margin-top: 5%;
+  padding: 0 3%;
+}
+.bot-msg-liste {
+  background-color:#ffffff;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+  border-radius: 18px 18px 18px 0;
+  width: 65%;
+  height: 8%;
   margin-top: 5%;
   padding: 0 3%;
 }
 .bot-msg p {
   padding: 0 3%;
-}
-#beschwerden {
-  opacity: 0;
 }
 #beschwerden-input {
   opacity: 0;
@@ -128,6 +132,9 @@
   width: 78%;
   margin: 2% 5%;
 }
+#beschwerden {
+  opacity: 0;
+}
 #beschwerden-fab {
   opacity: 0;
 }
@@ -135,5 +142,25 @@
   opacity: 0;
 }
 #bot-nachfrage {
+  opacity: 0;
+}
+#symptome-liste {
+  opacity: 0;
+}
+#migraene-fab, #meni-fab {
+  display: none;
+}
+.diagnose-beobachten {
+  background-color:#FFDA77;
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+  border-radius: 18px;
+  width: 90%;
+  height: 40%;
+  margin: 5% 0;
+  padding: 0 3%;
+}
+#diagnose-migraene {
   opacity: 0;
 }

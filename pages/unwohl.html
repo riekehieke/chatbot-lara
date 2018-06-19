@@ -16,13 +16,52 @@
     <div class="bot-msg" id="beschwerden">
       <p>Bitte beschreiben Sie Ihre Beschwerden in wenigen Worten.</p>
     </div>
+    <!-- Hier werden die Beschwerden angezeigt -->
     <div class="user-msg" id="user-beschwerden">
     </div>
+    <!-- Hier fragt der Bot nach weiteren Symptomen oder neuer Eingabe -->
     <div class="bot-msg" id="bot-nachfrage">
     </div>
+    <!-- Liste weitere Symptome -->
+    <ons-list id="symptome-liste" class="bot-msg-liste">
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-checkbox input-id="check-1" modifier="material"></ons-checkbox>
+        </label>
+        <label for="check-1" class="center" id="label-check-1">
+        </label>
+      </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-checkbox input-id="check-2" modifier="material"></ons-checkbox>
+        </label>
+        <label for="check-2" class="center" id="label-check-2">
+        </label>
+      </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-checkbox input-id="check-3" modifier="material"></ons-checkbox>
+        </label>
+        <label for="check-3" class="center" id="label-check-3">
+        </label>
+      </ons-list-item>
+    </ons-list>
+    <!-- Diagnose Migräne -->
+    <div class="diagnose-beobachten" id="diagnose-migraene">
+      <h3>Beobachten!</h3>
+      <p>Sie könnten Migräne haben. Sollten die Symptome bleiben oder sich verschlechtern, suchen Sie bitte in den nächsten Tagen einen Arzt auf!</p>
+    </div>
   </div>
+  <!-- Input Feld + FAB -->
   <ons-input type="text" placeholder="Beschwerden hier eingeben" modifier="underbar material" id="beschwerden-input"></ons-input>
   <ons-fab position="bottom right" modifier="mini" id="beschwerden-fab" onclick="Beschwerden()">
+    <ons-icon icon="md-plus"></ons-icon>
+  </ons-fab>
+  <!-- FAB je nach Krankheit -->
+  <ons-fab position="bottom right" modifier="mini" id="migraene-fab" onclick="Migraene()">
+    <ons-icon></ons-icon>
+  </ons-fab>
+  <ons-fab position="bottom right" modifier="mini" id="meni-fab" onclick="Meni()">
     <ons-icon icon="md-plus"></ons-icon>
   </ons-fab>
 </ons-page>
