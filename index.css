@@ -121,10 +121,13 @@
 #beschwerden {
   opacity: 0;
 }
-#input {
+#beschwerden-input {
   opacity: 0;
   position: fixed;
   bottom: 5px;
-  width: 90%;
+  width: 78%;
   margin: 2% 5%;
+}
+#beschwerden-fab {
+  opacity: 0;
 }

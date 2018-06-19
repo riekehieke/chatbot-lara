@@ -15,8 +15,10 @@ document.addEventListener('init', function (event) {
       setTimeout(function () {
         var beschwerden = document.getElementById('beschwerden')
         beschwerden.style.opacity = "1.0";
-        var input = document.getElementById('input')
+        var input = document.getElementById('beschwerden-input')
+        var fab = document.getElementById('beschwerden-fab')
         input.style.opacity = "1.0"
+        fab.style.opacity = "1.0"
       }, 1500);
     };
   }
