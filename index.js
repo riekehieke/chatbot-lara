@@ -202,6 +202,14 @@ function Meni() {
   }, 6000)
 }
 
+// Datum eingeben
+function DatumEingabe() {
+  document.getElementById('frage-termin').style.opacity = "1"
+  document.getElementById('frage-termin').scrollIntoView({ behavior: "smooth" });
+  document.getElementById('datum-input').style.opacity = "1"
+  document.getElementById('datum-fab').style.display = "block"
+}
+
 // Termin: Arzt auswählen
 function Termin() {
   var radio1 = document.getElementById("arzt-1").checked
@@ -233,13 +241,9 @@ function Termin() {
     document.getElementById("user-liste-arzt").scrollIntoView({ behavior: "smooth" });
   }
   document.getElementById("aerzte-fab").style.display = "none"
-  setTimeout(function () {
-    document.getElementById('frage-termin').style.opacity = "1"
-    document.getElementById('frage-termin').scrollIntoView({ behavior: "smooth" });
-    document.getElementById('datum-input').style.opacity = "1"
-    document.getElementById('datum-fab').style.display = "block"
-  }, 1000)
+  setTimeout(DatumEingabe(), 1000)
 }
+
 
 // Termin: Datum auswählen
 function Datum() {
@@ -265,27 +269,68 @@ function Zeit() {
   var zeit3 = document.getElementById("termin-3").checked
   var zeit4 = document.getElementById("termin-4").checked
   var zeit5 = document.getElementById("termin-5").checked
+  var termin1 = document.getElementById("label-termin-1").innerHTML
+  var termin2 = document.getElementById("label-termin-2").innerHTML
+  var termin3 = document.getElementById("label-termin-3").innerHTML
+  var termin4 = document.getElementById("label-termin-4").innerHTML
+  document.getElementById("termine-fab").style.display = "none"
   if (zeit1 == true) {
-    var user = "<p>Ich möchte den Termin um 09:30 Uhr wahrnehmen.</p>"
+    var user = "<p>Ich möchte den Termin um " + termin1 + " wahrnehmen.</p>"
     document.getElementById("user-zeit").innerHTML = user
     document.getElementById("user-zeit").scrollIntoView({ behavior: "smooth" });
+    setTimeout(function () {
+      var datum = document.getElementById("datum-input").value
+      var confirm = document.getElementById("bot-termin-confirm")
+      confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin1 + "eingetragen."
+      confirm.style.opacity = "1"
+      confirm.scrollIntoView({ behavior: "smooth" })
+    }, 1500)
   }
   if (zeit2 == true) {
-    var user = "<p>Ich möchte den Termin um 10:00 Uhr wahrnehmen.</p>"
+    var user = "<p>Ich möchte den Termin um " + termin2 + " wahrnehmen.</p>"
     document.getElementById("user-zeit").innerHTML = user
     document.getElementById("user-zeit").scrollIntoView({ behavior: "smooth" });
+    setTimeout(function () {
+      var datum = document.getElementById("datum-input").value
+      var confirm = document.getElementById("bot-termin-confirm")
+      confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin1 + "eingetragen."
+      confirm.style.opacity = "1"
+      confirm.scrollIntoView({ behavior: "smooth" })
+    }, 1500)
   }
   if (zeit3 == true) {
-    var user = "<p>Ich möchte den Termin um 12:45 Uhr wahrnehmen.</p>"
+    var user = "<p>Ich möchte den Termin um " + termin3 + " wahrnehmen.</p>"
     document.getElementById("user-zeit").innerHTML = user
     document.getElementById("user-zeit").scrollIntoView({ behavior: "smooth" });
+    setTimeout(function () {
+      var datum = document.getElementById("datum-input").value
+      var confirm = document.getElementById("bot-termin-confirm")
+      confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin1 + "eingetragen."
+      confirm.style.opacity = "1"
+      confirm.scrollIntoView({ behavior: "smooth" })
+    }, 1500)
   }
   if (zeit4 == true) {
-    var user = "<p>Ich möchte den Termin um 16:00 Uhr wahrnehmen.</p>"
+    var user = "<p>Ich möchte den Termin um " + termin4 + " wahrnehmen.</p>"
     document.getElementById("user-zeit").innerHTML = user
     document.getElementById("user-zeit").scrollIntoView({ behavior: "smooth" });
+    setTimeout(function () {
+      var datum = document.getElementById("datum-input").value
+      var confirm = document.getElementById("bot-termin-confirm")
+      confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin1 + "eingetragen."
+      confirm.style.opacity = "1"
+      confirm.scrollIntoView({ behavior: "smooth" })
+    }, 1500)
   }
   if (zeit5 == true) {
-
+    document.getElementById("user-datum").style.opacity = "0"
+    document.getElementById("frage-zeit").style.opacity = "0"
+    document.getElementById("termine-liste").style.opacity = "0"
+    DatumEingabe()
+    return
   }
+  // Zurück zum Start
+  setTimeout(function () {
+    document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
+  }, 6000)
 }
