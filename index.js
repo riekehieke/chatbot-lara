@@ -27,6 +27,14 @@ document.addEventListener('init', function (event) {
   if (page.id === 'start') {
     page.querySelector('#termin-button').onclick = function () {
       document.querySelector('#nav').pushPage('pages/termin.html', { data: { title: 'Arzttermin' } });
+      setTimeout(function () {
+        document.getElementById("klar").style.opacity = "1"
+        setTimeout(function () {
+          document.getElementById("arzt-auswahl").style.opacity = "1"
+          document.getElementById("aerzte-liste").style.opacity = "1"
+          document.getElementById("aerzte-fab").style.display = "block"
+        }, 1000)
+      }, 1500)
     };
   }
 });

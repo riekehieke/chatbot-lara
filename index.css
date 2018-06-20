@@ -145,10 +145,10 @@
 #bot-nachfrage {
   opacity: 0;
 }
-#symptome-liste {
+#symptome-liste, #klar, #arzt-auswahl, #aerzte-liste {
   opacity: 0;
 }
-#migraene-fab, #meni-fab {
+#migraene-fab, #meni-fab, #aerzte-fab {
   display: none;
 }
 .diagnose-beobachten {
