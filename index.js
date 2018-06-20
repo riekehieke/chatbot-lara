@@ -200,3 +200,32 @@ function Meni() {
     document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
   }, 6000)
 }
+
+// Arzt auswählen
+function Termin() {
+  var radio1 = document.getElementById("arzt-1").checked
+  var radio2 = document.getElementById("arzt-2").checked
+  var radio3 = document.getElementById("arzt-3").checked
+  var radio4 = document.getElementById("arzt-4").checked
+  if (radio1 == true) {
+    var user = "<p>Ich möchte einen Termin bei Dr. Mammes machen.</p>"
+    document.getElementById("user-liste-arzt").innerHTML = user
+    document.getElementById("user-liste-arzt").scrollIntoView({ behavior: "smooth" });
+  }
+  if (radio2 == true) {
+    var user = "<p>Ich möchte einen Termin bei Dr. Najuch machen.</p>"
+    document.getElementById("user-liste-arzt").innerHTML = user
+    document.getElementById("user-liste-arzt").scrollIntoView({ behavior: "smooth" });
+  }
+  if (radio3 == true) {
+    var user = "<p>Ich möchte einen Termin bei Dr. Grotelüschen machen.</p>"
+    document.getElementById("user-liste-arzt").innerHTML = user
+    document.getElementById("user-liste-arzt").scrollIntoView({ behavior: "smooth" });
+  }
+  if (radio4 == true) {
+    var user = "<p>Ich möchte einen Termin bei Dr. Bittermann machen.</p>"
+    document.getElementById("user-liste-arzt").innerHTML = user
+    document.getElementById("user-liste-arzt").scrollIntoView({ behavior: "smooth" });
+  }
+  document.getElementById("aerzte-fab").style.display = "none"
+}

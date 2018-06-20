@@ -22,39 +22,40 @@
     <ons-list id="aerzte-liste" class="bot-msg-liste">
       <ons-list-item tappable>
         <label class="left">
-          <ons-checkbox input-id="arzt-1" modifier="material"></ons-checkbox>
+          <ons-radio input-id="arzt-1" modifier="material" name="aerzte"></ons-radio>
         </label>
         <label for="arzt-1" class="center" id="label-arzt-1">
-          HNO-Arzt Dr. Martin Mustermann
+          HNO-Arzt Dr. Rembert Mammes
         </label>
       </ons-list-item>
       <ons-list-item tappable>
         <label class="left">
-          <ons-checkbox input-id="arzt-2" modifier="material"></ons-checkbox>
+          <ons-radio input-id="arzt-2" modifier="material" name="aerzte"></ons-radio>
         </label>
         <label for="arzt-2" class="center" id="label-arzt-2">
-          Allgemeinarzt Dr. Theresa Thesans
+          Allgemeinarzt Dr. Susanne Najuch
         </label>
       </ons-list-item>
       <ons-list-item tappable>
         <label class="left">
-          <ons-checkbox input-id="arzt-3" modifier="material"></ons-checkbox>
+          <ons-radio input-id="arzt-3" modifier="material" name="aerzte"></ons-radio>
         </label>
         <label for="arzt-3" class="center" id="label-arzt-3">
-          Chirurg Dr. Lars Lausemaus
+          Hautarzt Dr. Florian Grotelüschen
         </label>
       </ons-list-item>
       <ons-list-item tappable>
         <label class="left">
-          <ons-checkbox input-id="arzt-4" modifier="material"></ons-checkbox>
+          <ons-radio input-id="arzt-4" modifier="material" name="aerzte"></ons-radio>
         </label>
         <label for="arzt-4" class="center" id="label-arzt-4">
-          Augenarzt Dr. Sarah Sagmal
+          Augenarzt Dr. Karl Bittermann
         </label>
       </ons-list-item>
     </ons-list>
+    <div class="user-msg" id="user-liste-arzt"></div>
   </div>
-  <ons-fab position="bottom right" modifier="mini" id="aerzte-fab" onclick="Aerzte()">
+  <ons-fab position="bottom right" modifier="mini" id="aerzte-fab" onclick="Termin()">
     <ons-icon icon="md-plus"></ons-icon>
   </ons-fab>
 </ons-page>
