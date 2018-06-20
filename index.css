@@ -88,8 +88,7 @@
 /* Unwohl */
 .chat {
   display: flex;
-  /* justify-content: flex-end; */
-  margin: 0 5%;
+  margin: 0 5% 7% 5%;
   flex-wrap: wrap;
 }
 .user-msg {
@@ -126,7 +125,7 @@
 .bot-msg p {
   padding: 0 3%;
 }
-#beschwerden-input {
+#beschwerden-input, #datum-input {
   opacity: 0;
   position: fixed;
   bottom: 5px;
@@ -145,10 +144,10 @@
 #bot-nachfrage {
   opacity: 0;
 }
-#symptome-liste, #klar, #arzt-auswahl, #aerzte-liste {
+#symptome-liste, #klar, #arzt-auswahl, #aerzte-liste, #frage-termin, #user-datum, #frage-zeit, #termine-liste {
   opacity: 0;
 }
-#migraene-fab, #meni-fab, #aerzte-fab {
+#migraene-fab, #meni-fab, #aerzte-fab, #datum-fab, #termine-fab {
   display: none;
 }
 .diagnose-beobachten {

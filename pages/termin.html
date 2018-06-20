@@ -54,8 +54,68 @@
       </ons-list-item>
     </ons-list>
     <div class="user-msg" id="user-liste-arzt"></div>
+    <div class="bot-msg" id="frage-termin">
+      <p>Okay. Bitte gib das Datum ein.</p>
+    </div>
+    <div class="user-msg" id="user-datum"></div>
+    <div class="bot-msg" id="frage-zeit">
+      <p>Ich habe mehrere freie Termine für diesen Tag gefunden. Bitte wähle eine Uhrzeit aus der Liste aus.</p>
+    </div>
+    <ons-list id="termine-liste" class="bot-msg-liste">
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-radio input-id="termin-1" modifier="material" name="termine"></ons-radio>
+        </label>
+        <label for="termin-1" class="center" id="label-termin-1">
+          09:30 Uhr
+        </label>
+      </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-radio input-id="termin-2" modifier="material" name="termine"></ons-radio>
+        </label>
+        <label for="termin-2" class="center" id="label-termin-2">
+          10:00 Uhr
+        </label>
+      </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-radio input-id="termin-3" modifier="material" name="termine"></ons-radio>
+        </label>
+        <label for="termin-3" class="center" id="label-termin-3">
+          12:45 Uhr
+        </label>
+      </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-radio input-id="termin-4" modifier="material" name="termine"></ons-radio>
+        </label>
+        <label for="termin-4" class="center" id="label-termin-4">
+          16:00 Uhr
+        </label>
+      </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-radio input-id="termin-5" modifier="material" name="termine"></ons-radio>
+        </label>
+        <label for="termin-5" class="center" id="label-termin-5">
+          Ein anderes Datum auswählen
+        </label>
+      </ons-list-item>
+    </ons-list>
+    <div class="user-msg" id="user-zeit"></div>
   </div>
+  <!-- FAB Button Ärzte Liste -->
   <ons-fab position="bottom right" modifier="mini" id="aerzte-fab" onclick="Termin()">
+    <ons-icon icon="md-plus"></ons-icon>
+  </ons-fab>
+  <!-- Input Feld Datum + FAB -->
+  <ons-input type="date" modifier="underbar material" id="datum-input"></ons-input>
+  <ons-fab position="bottom right" modifier="mini" id="datum-fab" onclick="Datum()">
+    <ons-icon icon="md-plus"></ons-icon>
+  </ons-fab>
+  <!-- FAB Button Termine Liste -->
+  <ons-fab position="bottom right" modifier="mini" id="termine-fab" onclick="Zeit()">
     <ons-icon icon="md-plus"></ons-icon>
   </ons-fab>
 </ons-page>

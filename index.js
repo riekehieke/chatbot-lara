@@ -32,6 +32,7 @@ document.addEventListener('init', function (event) {
         setTimeout(function () {
           document.getElementById("arzt-auswahl").style.opacity = "1"
           document.getElementById("aerzte-liste").style.opacity = "1"
+          document.getElementById("aerzte-liste").scrollIntoView({ behavior: "smooth" })
           document.getElementById("aerzte-fab").style.display = "block"
         }, 1000)
       }, 1500)
@@ -201,31 +202,90 @@ function Meni() {
   }, 6000)
 }
 
-// Arzt auswählen
+// Termin: Arzt auswählen
 function Termin() {
   var radio1 = document.getElementById("arzt-1").checked
   var radio2 = document.getElementById("arzt-2").checked
   var radio3 = document.getElementById("arzt-3").checked
   var radio4 = document.getElementById("arzt-4").checked
+  var arzt1 = "Dr. Mammes"
+  var arzt2 = "Dr. Najuch"
+  var arzt3 = "Dr. Grotelüschen"
+  var arzt4 = "Dr. Bittermann"
   if (radio1 == true) {
-    var user = "<p>Ich möchte einen Termin bei Dr. Mammes machen.</p>"
+    var user = "<p>Ich möchte einen Termin bei " + arzt1 + " machen.</p>"
     document.getElementById("user-liste-arzt").innerHTML = user
     document.getElementById("user-liste-arzt").scrollIntoView({ behavior: "smooth" });
   }
   if (radio2 == true) {
-    var user = "<p>Ich möchte einen Termin bei Dr. Najuch machen.</p>"
+    var user = "<p>Ich möchte einen Termin bei " + arzt2 + " machen.</p>"
     document.getElementById("user-liste-arzt").innerHTML = user
     document.getElementById("user-liste-arzt").scrollIntoView({ behavior: "smooth" });
   }
   if (radio3 == true) {
-    var user = "<p>Ich möchte einen Termin bei Dr. Grotelüschen machen.</p>"
+    var user = "<p>Ich möchte einen Termin bei " + arzt3 + " machen.</p>"
     document.getElementById("user-liste-arzt").innerHTML = user
     document.getElementById("user-liste-arzt").scrollIntoView({ behavior: "smooth" });
   }
   if (radio4 == true) {
-    var user = "<p>Ich möchte einen Termin bei Dr. Bittermann machen.</p>"
+    var user = "<p>Ich möchte einen Termin bei " + arzt4 + " machen.</p>"
     document.getElementById("user-liste-arzt").innerHTML = user
     document.getElementById("user-liste-arzt").scrollIntoView({ behavior: "smooth" });
   }
   document.getElementById("aerzte-fab").style.display = "none"
+  setTimeout(function () {
+    document.getElementById('frage-termin').style.opacity = "1"
+    document.getElementById('frage-termin').scrollIntoView({ behavior: "smooth" });
+    document.getElementById('datum-input').style.opacity = "1"
+    document.getElementById('datum-fab').style.display = "block"
+  }, 1000)
+}
+
+// Termin: Datum auswählen
+function Datum() {
+  var datum = document.getElementById("datum-input").value
+  var user = document.getElementById("user-datum")
+  document.getElementById('datum-input').style.opacity = "0"
+  document.getElementById('datum-fab').style.display = "none"
+  user.innerHTML = "<p>Der Termin sollte am besten am " + datum + " sein.</p>"
+  user.style.opacity = "1"
+  user.scrollIntoView({ behavior: "smooth" })
+  setTimeout(function () {
+    document.getElementById("frage-zeit").style.opacity = "1"
+    document.getElementById("termine-liste").style.opacity = "1"
+    document.getElementById("termine-liste").scrollIntoView({ behavior: "smooth" })
+    document.getElementById("termine-fab").style.display = "block"
+  }, 1500)
+}
+
+// Termin: Zeit auswählen
+function Zeit() {
+  var zeit1 = document.getElementById("termin-1").checked
+  var zeit2 = document.getElementById("termin-2").checked
+  var zeit3 = document.getElementById("termin-3").checked
+  var zeit4 = document.getElementById("termin-4").checked
+  var zeit5 = document.getElementById("termin-5").checked
+  if (zeit1 == true) {
+    var user = "<p>Ich möchte den Termin um 09:30 Uhr wahrnehmen.</p>"
+    document.getElementById("user-zeit").innerHTML = user
+    document.getElementById("user-zeit").scrollIntoView({ behavior: "smooth" });
+  }
+  if (zeit2 == true) {
+    var user = "<p>Ich möchte den Termin um 10:00 Uhr wahrnehmen.</p>"
+    document.getElementById("user-zeit").innerHTML = user
+    document.getElementById("user-zeit").scrollIntoView({ behavior: "smooth" });
+  }
+  if (zeit3 == true) {
+    var user = "<p>Ich möchte den Termin um 12:45 Uhr wahrnehmen.</p>"
+    document.getElementById("user-zeit").innerHTML = user
+    document.getElementById("user-zeit").scrollIntoView({ behavior: "smooth" });
+  }
+  if (zeit4 == true) {
+    var user = "<p>Ich möchte den Termin um 16:00 Uhr wahrnehmen.</p>"
+    document.getElementById("user-zeit").innerHTML = user
+    document.getElementById("user-zeit").scrollIntoView({ behavior: "smooth" });
+  }
+  if (zeit5 == true) {
+
+  }
 }
