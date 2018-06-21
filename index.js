@@ -24,6 +24,7 @@ document.addEventListener('init', function (event) {
     };
   }
 
+  // Arzttermin Seite
   if (page.id === 'start') {
     page.querySelector('#termin-button').onclick = function () {
       document.querySelector('#nav').pushPage('pages/termin.html', { data: { title: 'Arzttermin' } });
@@ -38,6 +39,23 @@ document.addEventListener('init', function (event) {
       }, 1500)
     };
   }
+});
+
+// Neues Rezept Seite
+if (page.id === 'start') {
+  page.querySelector('#rezept-button').onclick = function () {
+    document.querySelector('#nav').pushPage('pages/rezept.html', { data: { title: 'Rezept Erneuerung' } });
+    setTimeout(function () {
+      document.getElementById("okay").style.opacity = "1"
+      setTimeout(function () {
+        document.getElementById("rezept-auswahl").style.opacity = "1"
+        document.getElementById("rezept-liste").style.opacity = "1"
+        document.getElementById("rezept-liste").scrollIntoView({ behavior: "smooth" })
+        document.getElementById("rezept-fab").style.display = "block"
+      }, 1000)
+    }, 1500)
+  };
+}
 });
 
 // Beschwerden analysieren

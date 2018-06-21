@@ -1,0 +1,57 @@
+<ons-page id="rezept">
+  <ons-toolbar modifier="transparent" style="position: fixed" class="toolbar-mit-logo">
+    <div class="center">
+      <img src="assets/logo.svg" alt="health-icon" id="logo-toolbar">
+    </div>
+    <div class="right">
+      <ons-toolbar-button>
+        <ons-icon icon="md-more-vert" style="margin: 10px 15px;" size="25px"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+  <div class="chat">
+    <div class="user-msg" style="margin-top: 10%;">
+      <p>Ich brauche ein neues Rezept.</p>
+    </div>
+    <div class="bot-msg" id="okay">
+      <p>Okay.</p>
+    </div>
+    <div class="bot-msg" id="medi-auswahl">
+      <p>Bitte wähle das Medikament aus, für das du ein neues Rezept benötigst.</p>
+    </div>
+    <ons-list id="medi-liste" class="bot-msg-liste">
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-radio input-id="medi-1" modifier="material" name="medis"></ons-radio>
+        </label>
+        <label for="medi-1" class="center" id="label-medi-1">
+          HNO-Arzt Dr. Rembert Mammes
+        </label>
+      </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-radio input-id="medi-2" modifier="material" name="medis"></ons-radio>
+        </label>
+        <label for="medi-2" class="center" id="label-medi-2">
+          Allgemeinarzt Dr. Susanne Najuch
+        </label>
+      </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-radio input-id="medi-3" modifier="material" name="medis"></ons-radio>
+        </label>
+        <label for="medi-3" class="center" id="label-medi-3">
+          Hautarzt Dr. Florian Grotelüschen
+        </label>
+      </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-radio input-id="medi-4" modifier="material" name="medis"></ons-radio>
+        </label>
+        <label for="medi-4" class="center" id="label-medi-4">
+          Augenarzt Dr. Karl Bittermann
+        </label>
+      </ons-list-item>
+    </ons-list>
+  </div>
+</ons-page>
