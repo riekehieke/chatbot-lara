@@ -1,6 +1,6 @@
 function regCode() {
   var regCode = document.getElementById("reg-code").value;
-  if (regCode === "321") {
+  if (regCode === "12345") {
     document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
   }
 }
@@ -351,4 +351,37 @@ function Zeit() {
   setTimeout(function () {
     document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
   }, 6000)
+}
+
+// Rezept: Medikament auswählen
+function Medi() {
+  var medi1 = document.getElementById("medi-1").checked
+  var medi2 = document.getElementById("medi-2").checked
+  var medi3 = document.getElementById("medi-3").checked
+  var medi4 = document.getElementById("medi-4").checked
+  var labelMedi1 = document.getElementById("label-medi-1").innerHTML
+  var labelMedi2 = document.getElementById("label-medi-2").innerHTML
+  var labelMedi3 = document.getElementById("label-medi-3").innerHTML
+  var labelMedi4 = document.getElementById("label-medi-4").innerHTML
+  var user = document.getElementById("user-medi-liste")
+  if (medi1 == true) {
+    user.innerHTML = "<p>Ich benötige ein neues Rezept für " + labelMedi1 + ".</p>"
+    user.style.opacity = "1"
+    user.scrollIntoView({ behavior: "smooth" })
+  }
+  if (medi2 == true) {
+    user.innerHTML = "<p>Ich benötige ein neues Rezept für " + labelMedi2 + ".</p>"
+    user.style.opacity = "1"
+    user.scrollIntoView({ behavior: "smooth" })
+  }
+  if (medi3 == true) {
+    user.innerHTML = "<p>Ich benötige ein neues Rezept für " + labelMedi3 + ".</p>"
+    user.style.opacity = "1"
+    user.scrollIntoView({ behavior: "smooth" })
+  }
+  if (medi4 == true) {
+    user.innerHTML = "<p>Ich benötige ein neues Rezept für " + labelMedi4 + ".</p>"
+    user.style.opacity = "1"
+    user.scrollIntoView({ behavior: "smooth" })
+  }
 }
