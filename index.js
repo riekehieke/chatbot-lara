@@ -33,7 +33,6 @@ document.addEventListener('init', function (event) {
         setTimeout(function () {
           document.getElementById("arzt-auswahl").style.opacity = "1"
           document.getElementById("aerzte-liste").style.opacity = "1"
-          document.getElementById("aerzte-liste").scrollIntoView({ behavior: "smooth" })
           document.getElementById("aerzte-fab").style.display = "block"
         }, 1000)
       }, 1500)
