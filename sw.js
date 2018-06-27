@@ -18,7 +18,6 @@ self.addEventListener("install", function (event) {
         "./assets/onsen-css-components.min.css",
         "./index.css",
         "./index.js",
-        "./favicon.ico",
         "./manifest.json",
         "./assets/favicon/*",
         "./assets/Logo.svg",
