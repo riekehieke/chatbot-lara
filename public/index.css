@@ -61,6 +61,7 @@
   color: #000000;
   opacity: 0.54;
   border: none;
+  flex-wrap: wrap;
 }
 
 .button-small {
@@ -77,10 +78,12 @@
   color: #000000;
   opacity: 0.54;
   border: none;
+  flex-wrap: wrap;
 }
 
 .button-small img {
   width: 50%;
+  transform: translateX(50%);
 }
 
 .button-big img {
