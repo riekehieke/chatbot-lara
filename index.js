@@ -9,11 +9,6 @@ function regCode() {
 document.addEventListener('init', function (event) {
   var page = event.target;
 
-  // Zurück zum Start
-  document.getElementById("logo-toolbar").onclick = function () {
-    document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
-  }
-
   // Unwohl Seite
   if (page.id === 'start') {
     page.querySelector('#unwohl-button').onclick = function () {
@@ -91,6 +86,7 @@ document.addEventListener('init', function (event) {
       }, 1500)
     };
   }
+
 });
 
 function Start() {
