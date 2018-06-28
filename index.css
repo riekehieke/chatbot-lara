@@ -144,7 +144,7 @@
 #bot-nachfrage {
   opacity: 0;
 }
-#symptome-liste, #klar, #arzt-auswahl, #aerzte-liste, #frage-termin, #user-datum, #frage-zeit, #termine-liste, #medi-auswahl, #medi-liste, #okay, #user-medi-liste, #bot-medi-bestätigung {
+#symptome-liste, #klar, #arzt-auswahl, #aerzte-liste, #frage-termin, #user-datum, #frage-zeit, #termine-liste, #medi-auswahl, #medi-liste, #okay, #user-medi-liste, #bot-medi-bestätigung, #kein-problem, #bot-zeigen, #apo-list {
   opacity: 0;
 }
 #migraene-fab, #meni-fab, #aerzte-fab, #datum-fab, #termine-fab, #medi-fab {
@@ -186,8 +186,20 @@
   margin: 5% 0;
   padding: 0 3%;
 }
-
 .rezept img {
   height: 100px;
   margin: 4%;
+}
+.expandable-content p {
+  font-size: 0.8rem;
+  line-height: 0.7rem;
+}
+.expandable-content h4 {
+  font-size: 0.9rem;
+  line-height: 1rem;
+  font-weight: 600;
+  margin: 2% 0 0 0;
+}
+.expandable-content {
+  padding: 0;
 }

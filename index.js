@@ -60,6 +60,37 @@ document.addEventListener('init', function (event) {
       }, 1500)
     };
   }
+
+  // Nächste Apotheke
+  if (page.id === 'start') {
+    page.querySelector('#apotheke-button').onclick = function () {
+      document.querySelector('#nav').pushPage('pages/apotheke.html', { data: { title: 'Apotheke finden' } });
+      setTimeout(function () {
+        document.getElementById("kein-problem").style.opacity = "1"
+        setTimeout(function () {
+          document.getElementById("bot-zeigen").style.opacity = "1"
+          document.getElementById("apo-list").style.opacity = "1"
+        }, 1000)
+      }, 1500)
+    };
+  }
+
+  // Medikamente-Erinnerung
+  if (page.id === 'start') {
+    page.querySelector('#medikamente-button').onclick = function () {
+      document.querySelector('#nav').pushPage('pages/medikamente.html', { data: { title: 'An Medikamente erinnern' } });
+      //   setTimeout(function () {
+      //     document.getElementById("okay").style.opacity = "1"
+      //     setTimeout(function () {
+      //       document.getElementById("medi-auswahl").style.opacity = "1"
+      //       document.getElementById("medi-liste").style.opacity = "1"
+      //       document.getElementById("medi-liste").scrollIntoView({ behavior: "smooth" })
+      //       document.getElementById("medi-fab").style.display = "block"
+      //     }, 1000)
+      //   }, 1500)
+    };
+  }
+
 });
 
 // Beschwerden analysieren
