@@ -1,6 +1,6 @@
 function regCode() {
   var regCode = document.getElementById("reg-code").value;
-  if (regCode === "12345") {
+  if (regCode === "1") {
     document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
   }
 }
@@ -164,9 +164,10 @@ function Migraene() {
     document.getElementById("diagnose-migraene").scrollIntoView({ behavior: "smooth" });
   }, 1000)
   // Zurück zum Start
-  setTimeout(function () {
-    document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
-  }, 6000)
+  // setTimeout(function () {
+  //   document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
+  // }, 6000)
+  Start()
 }
 
 function Meni() {
@@ -315,7 +316,7 @@ function Zeit() {
     setTimeout(function () {
       var datum = document.getElementById("datum-input").value
       var confirm = document.getElementById("bot-termin-confirm")
-      confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin1 + "eingetragen."
+      confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin2 + "eingetragen."
       confirm.style.opacity = "1"
       confirm.scrollIntoView({ behavior: "smooth" })
     }, 1500)
@@ -327,7 +328,7 @@ function Zeit() {
     setTimeout(function () {
       var datum = document.getElementById("datum-input").value
       var confirm = document.getElementById("bot-termin-confirm")
-      confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin1 + "eingetragen."
+      confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin3 + "eingetragen."
       confirm.style.opacity = "1"
       confirm.scrollIntoView({ behavior: "smooth" })
     }, 1500)
@@ -339,7 +340,7 @@ function Zeit() {
     setTimeout(function () {
       var datum = document.getElementById("datum-input").value
       var confirm = document.getElementById("bot-termin-confirm")
-      confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin1 + "eingetragen."
+      confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin4 + "eingetragen."
       confirm.style.opacity = "1"
       confirm.scrollIntoView({ behavior: "smooth" })
     }, 1500)
@@ -367,26 +368,32 @@ function Medi() {
   var labelMedi2 = document.getElementById("label-medi-2").innerHTML
   var labelMedi3 = document.getElementById("label-medi-3").innerHTML
   var labelMedi4 = document.getElementById("label-medi-4").innerHTML
+  var rezeptMedi = document.getElementById("rezept-medi")
+  var rezeptMediFail = document.getElementById("rezept-medi-fail")
   var user = document.getElementById("user-medi-liste")
   if (medi1 == true) {
     user.innerHTML = "<p>Ich benötige ein neues Rezept für " + labelMedi1 + ".</p>"
     user.style.opacity = "1"
     user.scrollIntoView({ behavior: "smooth" })
+    rezeptMedi.innerHTML = "Für " + labelMedi1 + " steht bereit. Bitte zeigen Sie diesen QR-Code in der Apotheke vor, um ihr Medikament zu erhalten."
   }
   if (medi2 == true) {
     user.innerHTML = "<p>Ich benötige ein neues Rezept für " + labelMedi2 + ".</p>"
     user.style.opacity = "1"
     user.scrollIntoView({ behavior: "smooth" })
+    rezeptMedi.innerHTML = "Für " + labelMedi2 + " steht bereit. Bitte zeigen Sie diesen QR-Code in der Apotheke vor, um ihr Medikament zu erhalten."
   }
   if (medi3 == true) {
     user.innerHTML = "<p>Ich benötige ein neues Rezept für " + labelMedi3 + ".</p>"
     user.style.opacity = "1"
     user.scrollIntoView({ behavior: "smooth" })
+    rezeptMediFail.innerHTML = "Ihre Anfrage für " + labelMedi3 + " wurde vorerst von Ihrem Arzt abgelehnt. Bitte vereinbaren Sie einen Arzttermin."
   }
   if (medi4 == true) {
     user.innerHTML = "<p>Ich benötige ein neues Rezept für " + labelMedi4 + ".</p>"
     user.style.opacity = "1"
     user.scrollIntoView({ behavior: "smooth" })
+    rezeptMedi.innerHTML = "Für " + labelMedi4 + " steht bereit. Bitte zeigen Sie diesen QR-Code in der Apotheke vor, um ihr Medikament zu erhalten."
   }
   document.getElementById("medi-fab").style.display = "none"
   setTimeout(function () {
@@ -394,5 +401,33 @@ function Medi() {
   }, 1500)
   setTimeout(function () {
     // Digitales Rezept anzeigen
+    if (medi1 == true || medi2 == true || medi4 == true) {
+      var rezeptQR = document.getElementById("qr-rezept")
+      rezeptQR.style.display = "block"
+      rezeptQR.scrollIntoView({ behavior: "smooth" })
+      setTimeout(function () {
+        document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
+      }, 6000)
+    }
+    if (medi3 == true) {
+      var rezeptQRFail = document.getElementById("qr-rezept-fail")
+      rezeptQRFail.style.display = "block"
+      var rezeptArzt = document.getElementById("rezept-arzt")
+      rezeptArzt.style.display = "block"
+      rezeptArzt.scrollIntoView({ behavior: "smooth" })
+    }
   }, 5000)
+}
+
+// Rezept-Seite Weiterleitung Arzttermin vereinbaren
+function Arzt() {
+  document.querySelector('#nav').pushPage('pages/termin.html', { data: { title: 'Arzttermin' } });
+  setTimeout(function () {
+    document.getElementById("klar").style.opacity = "1"
+    setTimeout(function () {
+      document.getElementById("arzt-auswahl").style.opacity = "1"
+      document.getElementById("aerzte-liste").style.opacity = "1"
+      document.getElementById("aerzte-fab").style.display = "block"
+    }, 1000)
+  }, 1500)
 }

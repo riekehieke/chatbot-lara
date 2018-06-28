@@ -25,7 +25,7 @@
           <ons-radio input-id="medi-1" modifier="material" name="medis"></ons-radio>
         </label>
         <label for="medi-1" class="center" id="label-medi-1">
-          Medikament 1
+          Azathioprin
         </label>
       </ons-list-item>
       <ons-list-item tappable>
@@ -33,7 +33,7 @@
           <ons-radio input-id="medi-2" modifier="material" name="medis"></ons-radio>
         </label>
         <label for="medi-2" class="center" id="label-medi-2">
-          Medikament 2
+          Marcumar
         </label>
       </ons-list-item>
       <ons-list-item tappable>
@@ -41,7 +41,7 @@
           <ons-radio input-id="medi-3" modifier="material" name="medis"></ons-radio>
         </label>
         <label for="medi-3" class="center" id="label-medi-3">
-          Medikament 3
+          Favistan
         </label>
       </ons-list-item>
       <ons-list-item tappable>
@@ -49,15 +49,27 @@
           <ons-radio input-id="medi-4" modifier="material" name="medis"></ons-radio>
         </label>
         <label for="medi-4" class="center" id="label-medi-4">
-          Medikament 4
+          Prednisolon
         </label>
       </ons-list-item>
     </ons-list>
     <div class="user-msg" id="user-medi-liste">
     </div>
     <div class="bot-msg" id="bot-medi-bestätigung">
-      <p>Okay. Ich habe deinem Arzt eine Anfrage gesendet. Sobald dein Arzt diese Anfrage bestätigt, kannst du das Rezept hier aufrufen.</p>
+      <p>Okay. Ich habe deinem Arzt eine Anfrage gesendet. Sobald dein Arzt diese Anfrage bestätigt, kannst du das Rezept hier
+        aufrufen.
+      </p>
     </div>
+    <div class="rezept" id="qr-rezept">
+      <h3>Ihr digitales Rezept</h3>
+      <p id="rezept-medi"></p>
+      <img src="assets/qr.png" alt="QR Code">
+    </div>
+    <div class="rezept" id="qr-rezept-fail">
+      <h3>Warnung</h3>
+      <p id="rezept-medi-fail"></p>
+    </div>
+    <ons-button modifier="large" id="rezept-arzt" onclick="Arzt()">Jetzt Arzttermin vereinbaren</ons-button>
   </div>
   <!-- FAB Medi -->
   <ons-fab position="bottom right" modifier="mini" id="medi-fab" onclick="Medi()">
