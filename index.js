@@ -586,3 +586,19 @@ function Uhrzeit() {
     start.scrollIntoView({ behavior: "smooth" })
   }, 1500)
 }
+
+function Menu() {
+  document.getElementById("menu-list").classList.toggle("invisible")
+}
+
+function Akte() {
+  document.querySelector('#nav').pushPage('pages/akte.html', { data: { title: 'Meine Akte' } });
+}
+
+function Einstellungen() {
+  document.querySelector('#nav').pushPage('pages/einstellungen.html', { data: { title: 'Meine Akte' } });
+}
+
+function Impressum() {
+  document.querySelector('#nav').pushPage('pages/impressum.html', { data: { title: 'Meine Akte' } });
+}

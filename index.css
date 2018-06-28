@@ -84,6 +84,18 @@
   margin: 10% 0 0 0;
 }
 
+.einstellung {
+  width: 60%;
+  margin: 5% 0 0 0;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+  position: fixed;
+  z-index: 999;
+  transform: translateX(80%);
+}
+.invisible {
+  display: none;
+}
+
 
 /* Unwohl */
 .chat {

@@ -5,10 +5,23 @@
     </div>
     <div class="right">
       <ons-toolbar-button>
-        <ons-icon icon="md-more-vert" style="margin: 10px 15px;" size="25px"></ons-icon>
+        <ons-icon icon="md-more-vert" style="margin: 10px 15px;" size="25px" onclick="Menu()"></ons-icon>
       </ons-toolbar-button>
     </div>
   </ons-toolbar>
+  <div class="einstellung invisible" id="menu-list">
+    <ons-list>
+      <ons-list-item onclick="Akte()" tappable ripple>
+        Meine Akte
+      </ons-list-item>
+      <ons-list-item onclick="Einstellungen()" tappable ripple>
+        Einstellungen
+      </ons-list-item>
+      <ons-list-item onclick="Impressum()" tappable ripple>
+        Impressum
+      </ons-list-item>
+    </ons-list>
+  </div>
   <div class="chat">
     <div class="user-msg" style="margin-top: 10%;">
       <p>Ich fühle mich unwohl.</p>
