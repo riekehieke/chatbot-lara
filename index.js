@@ -70,6 +70,7 @@ document.addEventListener('init', function (event) {
         setTimeout(function () {
           document.getElementById("bot-zeigen").style.opacity = "1"
           document.getElementById("apo-list").style.opacity = "1"
+          document.getElementById("start-btn").style.opacity = "1"
         }, 1000)
       }, 1500)
     };
@@ -90,8 +91,11 @@ document.addEventListener('init', function (event) {
       //   }, 1500)
     };
   }
-
 });
+
+function Start() {
+  document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
+}
 
 // Beschwerden analysieren
 function Beschwerden() {
@@ -193,12 +197,15 @@ function Migraene() {
   setTimeout(function () {
     document.getElementById("diagnose-migraene").style.display = "block"
     document.getElementById("diagnose-migraene").scrollIntoView({ behavior: "smooth" });
+    // Zurück zum Start
+    var start = document.getElementById("start-btn")
+    start.style.opacity = "1"
+    start.scrollIntoView({ behavior: "smooth" })
   }, 1000)
-  // Zurück zum Start
+  // // Zurück zum Start
   // setTimeout(function () {
   //   document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
   // }, 6000)
-  Start()
 }
 
 function Meni() {
@@ -249,11 +256,11 @@ function Meni() {
   setTimeout(function () {
     document.getElementById("diagnose-meni").style.display = "block"
     document.getElementById("diagnose-meni").scrollIntoView({ behavior: "smooth" });
+    // Zurück zum Start
+    var start = document.getElementById("start-btn")
+    start.style.opacity = "1"
+    start.scrollIntoView({ behavior: "smooth" })
   }, 1000)
-  // Zurück zum Start
-  setTimeout(function () {
-    document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
-  }, 6000)
 }
 
 // Datum eingeben
@@ -338,6 +345,10 @@ function Zeit() {
       confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin1 + "eingetragen."
       confirm.style.opacity = "1"
       confirm.scrollIntoView({ behavior: "smooth" })
+      // Zurück zum Start
+      var start = document.getElementById("start-btn")
+      start.style.opacity = "1"
+      start.scrollIntoView({ behavior: "smooth" })
     }, 1500)
   }
   if (zeit2 == true) {
@@ -350,6 +361,10 @@ function Zeit() {
       confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin2 + "eingetragen."
       confirm.style.opacity = "1"
       confirm.scrollIntoView({ behavior: "smooth" })
+      // Zurück zum Start
+      var start = document.getElementById("start-btn")
+      start.style.opacity = "1"
+      start.scrollIntoView({ behavior: "smooth" })
     }, 1500)
   }
   if (zeit3 == true) {
@@ -362,6 +377,10 @@ function Zeit() {
       confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin3 + "eingetragen."
       confirm.style.opacity = "1"
       confirm.scrollIntoView({ behavior: "smooth" })
+      // Zurück zum Start
+      var start = document.getElementById("start-btn")
+      start.style.opacity = "1"
+      start.scrollIntoView({ behavior: "smooth" })
     }, 1500)
   }
   if (zeit4 == true) {
@@ -374,6 +393,10 @@ function Zeit() {
       confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin4 + "eingetragen."
       confirm.style.opacity = "1"
       confirm.scrollIntoView({ behavior: "smooth" })
+      // Zurück zum Start
+      var start = document.getElementById("start-btn")
+      start.style.opacity = "1"
+      start.scrollIntoView({ behavior: "smooth" })
     }, 1500)
   }
   if (zeit5 == true) {
@@ -383,10 +406,6 @@ function Zeit() {
     DatumEingabe()
     return
   }
-  // Zurück zum Start
-  setTimeout(function () {
-    document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
-  }, 6000)
 }
 
 // Rezept: Medikament auswählen
@@ -435,10 +454,9 @@ function Medi() {
     if (medi1 == true || medi2 == true || medi4 == true) {
       var rezeptQR = document.getElementById("qr-rezept")
       rezeptQR.style.display = "block"
-      rezeptQR.scrollIntoView({ behavior: "smooth" })
-      setTimeout(function () {
-        document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
-      }, 6000)
+      var start = document.getElementById("start-btn")
+      start.style.opacity = "1"
+      start.scrollIntoView({ behavior: "smooth" })
     }
     if (medi3 == true) {
       var rezeptQRFail = document.getElementById("qr-rezept-fail")

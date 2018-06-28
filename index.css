@@ -144,7 +144,7 @@
 #bot-nachfrage {
   opacity: 0;
 }
-#symptome-liste, #klar, #arzt-auswahl, #aerzte-liste, #frage-termin, #user-datum, #frage-zeit, #termine-liste, #medi-auswahl, #medi-liste, #okay, #user-medi-liste, #bot-medi-bestätigung, #kein-problem, #bot-zeigen, #apo-list {
+#symptome-liste, #klar, #arzt-auswahl, #aerzte-liste, #frage-termin, #user-datum, #frage-zeit, #termine-liste, #medi-auswahl, #medi-liste, #okay, #user-medi-liste, #bot-medi-bestätigung, #kein-problem, #bot-zeigen, #apo-list, #start-btn {
   opacity: 0;
 }
 #migraene-fab, #meni-fab, #aerzte-fab, #datum-fab, #termine-fab, #medi-fab {
@@ -194,12 +194,24 @@
   font-size: 0.8rem;
   line-height: 0.7rem;
 }
+
+.expandable-content a {
+  font-size: 0.8rem;
+  line-height: 0.7rem;
+  color: #36EBB4;
+  text-decoration: none;
+}
+
 .expandable-content h4 {
   font-size: 0.9rem;
   line-height: 1rem;
   font-weight: 600;
-  margin: 2% 0 0 0;
+  padding: 2% 0 0 0;
 }
 .expandable-content {
   padding: 0;
+}
+
+#start-btn {
+  margin: 5% 0 0 0;
 }

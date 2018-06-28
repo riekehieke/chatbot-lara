@@ -105,18 +105,19 @@
     </ons-list>
     <div class="user-msg" id="user-zeit"></div>
     <div class="bot-msg" id="bot-termin-confirm"></div>
+    <ons-button modifier="large" id="start-btn" onclick="Start()">Zurück zum Start</ons-button>
   </div>
   <!-- FAB Button Ärzte Liste -->
   <ons-fab position="bottom right" modifier="mini" id="aerzte-fab" onclick="Termin()">
-    <ons-icon icon="md-plus"></ons-icon>
+    <ons-icon icon="md-check"></ons-icon>
   </ons-fab>
   <!-- Input Feld Datum + FAB -->
   <ons-input type="date" modifier="underbar material" id="datum-input"></ons-input>
   <ons-fab position="bottom right" modifier="mini" id="datum-fab" onclick="Datum()">
-    <ons-icon icon="md-plus"></ons-icon>
+    <ons-icon icon="md-check"></ons-icon>
   </ons-fab>
   <!-- FAB Button Termine Liste -->
   <ons-fab position="bottom right" modifier="mini" id="termine-fab" onclick="Zeit()">
-    <ons-icon icon="md-plus"></ons-icon>
+    <ons-icon icon="md-check"></ons-icon>
   </ons-fab>
 </ons-page>

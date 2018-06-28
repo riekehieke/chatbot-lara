@@ -50,7 +50,8 @@
     <!-- Diagnose Migräne -->
     <div class="diagnose-beobachten" id="diagnose-migraene">
       <h3>Beobachten!</h3>
-      <p>Sie könnten Migräne haben. Sollten die Symptome bleiben oder sich verschlechtern, suchen Sie bitte in den nächsten Tagen einen Arzt auf!</p>
+      <p>Sie könnten Migräne haben. Sollten die Symptome bleiben oder sich verschlechtern, suchen Sie bitte in den nächsten
+        Tagen einen Arzt auf!</p>
       <p>Bitte beachten Sie, dass diese Auswertung nur eine Empfehlung ist und keine ärztliche Diagnose ersetzt.</p>
     </div>
     <div class="diagnose-gefaehrlich" id="diagnose-meni">
@@ -58,17 +59,18 @@
       <p>Sie könnten eine Meningitis (Hirnhautentzündung) haben. Sie sollten sich umgehend in die Notaufnahme begeben.</p>
       <p>Bitte beachten Sie, dass diese Auswertung nur eine Empfehlung ist und keine ärztliche Diagnose ersetzt.</p>
     </div>
+    <ons-button modifier="large" id="start-btn" onclick="Start()">Zurück zum Start</ons-button>
   </div>
   <!-- Input Feld + FAB -->
   <ons-input type="text" placeholder="Beschwerden hier eingeben" modifier="underbar material" id="beschwerden-input"></ons-input>
   <ons-fab position="bottom right" modifier="mini" id="beschwerden-fab" onclick="Beschwerden()">
-    <ons-icon icon="md-plus"></ons-icon>
+    <ons-icon icon="md-check"></ons-icon>
   </ons-fab>
   <!-- FAB je nach Krankheit -->
   <ons-fab position="bottom right" modifier="mini" id="migraene-fab" onclick="Migraene()">
-    <ons-icon icon="md-plus"></ons-icon>
+    <ons-icon icon="md-check"></ons-icon>
   </ons-fab>
   <ons-fab position="bottom right" modifier="mini" id="meni-fab" onclick="Meni()">
-    <ons-icon icon="md-plus"></ons-icon>
+    <ons-icon icon="md-check"></ons-icon>
   </ons-fab>
 </ons-page>
