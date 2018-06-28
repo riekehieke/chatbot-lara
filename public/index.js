@@ -21,7 +21,7 @@ document.addEventListener('init', function (event) {
         input.style.opacity = "1.0"
         fab.style.opacity = "1.0"
       }, 1500);
-    };
+    }
   }
 
   // Arzttermin Seite

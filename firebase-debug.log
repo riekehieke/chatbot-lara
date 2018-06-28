@@ -1,0 +1,32 @@
+[debug] [2018-06-28T14:50:59.937Z] ----------------------------------------------------------------------
+[debug] [2018-06-28T14:50:59.969Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-06-28T14:50:59.969Z] CLI Version:   3.19.1
+[debug] [2018-06-28T14:50:59.969Z] Platform:      darwin
+[debug] [2018-06-28T14:50:59.969Z] Node Version:  v8.9.1
+[debug] [2018-06-28T14:50:59.989Z] Time:          Thu Jun 28 2018 16:50:59 GMT+0200 (CEST)
+[debug] [2018-06-28T14:50:59.989Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-06-28T14:51:00.085Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-06-28T14:51:00.085Z] > authorizing via signed-in user
+[debug] [2018-06-28T14:51:00.087Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/chatbot-lara  
+  
+ Thu Jun 28 2018 16:51:00 GMT+0200 (CEST)
+[debug] [2018-06-28T14:51:01.415Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-28T14:51:01.416Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/chatbot-lara/tokens  
+  
+ Thu Jun 28 2018 16:51:01 GMT+0200 (CEST)
+[debug] [2018-06-28T14:51:01.998Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-28T14:51:01.999Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/chatbot-lara  
+  
+ Thu Jun 28 2018 16:51:01 GMT+0200 (CEST)
+[debug] [2018-06-28T14:51:03.126Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/rieke/Documents/CODE/chatbot-lara'...
+[info] 
+[debug] [2018-06-28T14:51:03.127Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/947688770366/clients/_:getWebAppConfig  
+  
+ Thu Jun 28 2018 16:51:03 GMT+0200 (CEST)
+[debug] [2018-06-28T14:51:03.922Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
