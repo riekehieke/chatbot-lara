@@ -144,7 +144,7 @@
 #bot-nachfrage {
   opacity: 0;
 }
-#symptome-liste, #klar, #arzt-auswahl, #aerzte-liste, #frage-termin, #user-datum, #frage-zeit, #termine-liste, #medi-auswahl, #medi-liste, #okay, #user-medi-liste {
+#symptome-liste, #klar, #arzt-auswahl, #aerzte-liste, #frage-termin, #user-datum, #frage-zeit, #termine-liste, #medi-auswahl, #medi-liste, #okay, #user-medi-liste, #bot-medi-bestätigung {
   opacity: 0;
 }
 #migraene-fab, #meni-fab, #aerzte-fab, #datum-fab, #termine-fab, #medi-fab {

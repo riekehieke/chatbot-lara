@@ -9,7 +9,12 @@ function regCode() {
 document.addEventListener('init', function (event) {
   var page = event.target;
 
+  // Zurück zum Start
+  document.getElementById("logo-toolbar").onclick = function () {
+    document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
+  }
 
+  // Unwohl Seite
   if (page.id === 'start') {
     page.querySelector('#unwohl-button').onclick = function () {
       document.querySelector('#nav').pushPage('pages/unwohl.html', { data: { title: 'Unwohl' } });
@@ -383,4 +388,11 @@ function Medi() {
     user.style.opacity = "1"
     user.scrollIntoView({ behavior: "smooth" })
   }
+  document.getElementById("medi-fab").style.display = "none"
+  setTimeout(function () {
+    document.getElementById("bot-medi-bestätigung").style.opacity = "1"
+  }, 1500)
+  setTimeout(function () {
+    // Digitales Rezept anzeigen
+  }, 5000)
 }
