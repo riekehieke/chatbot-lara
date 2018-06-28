@@ -79,6 +79,14 @@
   border: none;
 }
 
+.button-small img {
+  width: 50%;
+}
+
+.button-big img {
+  width: 40%;
+}
+
 .anrede {
   text-align: center;
   margin: 10% 0 0 0;
