@@ -1,0 +1,124 @@
+<ons-page id="erinnerung">
+  <ons-toolbar modifier="transparent" style="position: fixed" class="toolbar-mit-logo">
+    <div class="center">
+      <img src="assets/logo.svg" alt="health-icon" id="logo-toolbar">
+    </div>
+    <div class="right">
+      <ons-toolbar-button>
+        <ons-icon icon="md-more-vert" style="margin: 10px 15px;" size="25px"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+  <div class="chat">
+    <div class="user-msg" style="margin-top: 10%;">
+      <p>Ich möchte an meine Medikamente erinnert werden.</p>
+    </div>
+    <div class="bot-msg" id="ordnung">
+      <p>In Ordnung.</p>
+    </div>
+    <div class="bot-msg" id="bot-show-medi">
+      <p>An welches Medikament möchten Sie erinnert werden?</p>
+    </div>
+    <ons-list id="medi-liste2" class="bot-msg-liste">
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-radio input-id="medi-1" modifier="material" name="medis"></ons-radio>
+        </label>
+        <label for="medi-1" class="center" id="label-medi-1">
+          Azathioprin
+        </label>
+      </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-radio input-id="medi-2" modifier="material" name="medis"></ons-radio>
+        </label>
+        <label for="medi-2" class="center" id="label-medi-2">
+          Marcumar
+        </label>
+      </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-radio input-id="medi-3" modifier="material" name="medis"></ons-radio>
+        </label>
+        <label for="medi-3" class="center" id="label-medi-3">
+          Favistan
+        </label>
+      </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-radio input-id="medi-4" modifier="material" name="medis"></ons-radio>
+        </label>
+        <label for="medi-4" class="center" id="label-medi-4">
+          Prednisolon
+        </label>
+      </ons-list-item>
+    </ons-list>
+    <div class="user-msg" id="medi-auswahl-user"></div>
+    <div class="bot-msg" id="bot-intervall-frage">
+      <p>Okay. Wie oft muss das Medikament eingenommen werden?</p>
+    </div>
+    <ons-list id="intervall-liste" class="bot-msg-liste">
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-radio input-id="inter-1" modifier="material" name="intervall"></ons-radio>
+        </label>
+        <label for="inter-1" class="center" id="label-inter-1">
+          3x täglich
+        </label>
+      </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-radio input-id="inter-2" modifier="material" name="intervall"></ons-radio>
+        </label>
+        <label for="inter-2" class="center" id="label-inter-2">
+          2x täglich
+        </label>
+      </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-radio input-id="inter-3" modifier="material" name="intervall"></ons-radio>
+        </label>
+        <label for="inter-3" class="center" id="label-inter-3">
+          1x täglich
+        </label>
+      </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-radio input-id="inter-4" modifier="material" name="intervall"></ons-radio>
+        </label>
+        <label for="inter-4" class="center" id="label-inter-4">
+          Alle zwei Tage
+        </label>
+      </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-radio input-id="inter-5" modifier="material" name="intervall"></ons-radio>
+        </label>
+        <label for="inter-5" class="center" id="label-inter-5">
+          Einmal pro Woche
+        </label>
+      </ons-list-item>
+    </ons-list>
+    <div class="user-msg" id="user-intervall-confirm"></div>
+    <div class="bot-msg" id="bot-frage-uhrzeit">
+      <p>In Ordnung. Um wie viel Uhr möchtest du erinnert werden?</p>
+    </div>
+    <div class="user-msg" id="user-uhrzeit-confirm"></div>
+    <div class="bot-msg" id="bot-confirm-erinnerung">
+      <p>Sehr gut. Ich habe die Erinnerung eingestellt.</p>
+    </div>
+    <ons-button modifier="large" id="start-btn" onclick="Start()">Zurück zum Start</ons-button>
+  </div>
+  <!-- FAB -->
+  <ons-fab position="bottom right" modifier="mini" id="medi-fab2" onclick="Erinnerung()">
+    <ons-icon icon="md-check"></ons-icon>
+  </ons-fab>
+  <ons-fab position="bottom right" modifier="mini" id="intervall-fab" onclick="Intervall()">
+    <ons-icon icon="md-check"></ons-icon>
+  </ons-fab>
+  <!-- Input Uhrzeit -->
+  <ons-input type="time" modifier="underbar material" id="uhrzeit-input"></ons-input>
+  <ons-fab position="bottom right" modifier="mini" id="uhrzeit-fab" onclick="Uhrzeit()">
+    <ons-icon icon="md-check"></ons-icon>
+  </ons-fab>
+</ons-page>

@@ -78,17 +78,17 @@ document.addEventListener('init', function (event) {
 
   // Medikamente-Erinnerung
   if (page.id === 'start') {
-    page.querySelector('#medikamente-button').onclick = function () {
-      document.querySelector('#nav').pushPage('pages/medikamente.html', { data: { title: 'An Medikamente erinnern' } });
-      //   setTimeout(function () {
-      //     document.getElementById("okay").style.opacity = "1"
-      //     setTimeout(function () {
-      //       document.getElementById("medi-auswahl").style.opacity = "1"
-      //       document.getElementById("medi-liste").style.opacity = "1"
-      //       document.getElementById("medi-liste").scrollIntoView({ behavior: "smooth" })
-      //       document.getElementById("medi-fab").style.display = "block"
-      //     }, 1000)
-      //   }, 1500)
+    page.querySelector('#erinnerung-button').onclick = function () {
+      document.querySelector('#nav').pushPage('pages/erinnerung.html', { data: { title: 'An Medikamente erinnern' } });
+      setTimeout(function () {
+        document.getElementById("ordnung").style.opacity = "1"
+        setTimeout(function () {
+          document.getElementById("bot-show-medi").style.opacity = "1"
+          document.getElementById("medi-liste2").style.opacity = "1"
+          document.getElementById("medi-liste2").scrollIntoView({ behavior: "smooth" })
+          document.getElementById("medi-fab2").style.display = "block"
+        }, 1000)
+      }, 1500)
     };
   }
 });
@@ -478,5 +478,115 @@ function Arzt() {
       document.getElementById("aerzte-liste").style.opacity = "1"
       document.getElementById("aerzte-fab").style.display = "block"
     }, 1000)
+  }, 1500)
+}
+
+// Erinnerung Seite Medikament Auswahl
+function Erinnerung() {
+  var medi1 = document.getElementById("medi-1").checked
+  var medi2 = document.getElementById("medi-2").checked
+  var medi3 = document.getElementById("medi-3").checked
+  var medi4 = document.getElementById("medi-4").checked
+  var labelMedi1 = document.getElementById("label-medi-1").innerHTML
+  var labelMedi2 = document.getElementById("label-medi-2").innerHTML
+  var labelMedi3 = document.getElementById("label-medi-3").innerHTML
+  var labelMedi4 = document.getElementById("label-medi-4").innerHTML
+  var mediAuswahlUser = document.getElementById("medi-auswahl-user")
+  if (medi1 == true) {
+    mediAuswahlUser.innerHTML = "<p>Ich möchte daran erinnert werden, " + labelMedi1 + " einzunehmen.</p>"
+    mediAuswahlUser.style.opacity = "1"
+    mediAuswahlUser.scrollIntoView({ behavior: "smooth" })
+    document.getElementById("medi-fab2").style.display = "none"
+  }
+  if (medi2 == true) {
+    mediAuswahlUser.innerHTML = "<p>Ich möchte daran erinnert werden, " + labelMedi2 + " einzunehmen.</p>"
+    mediAuswahlUser.style.opacity = "1"
+    mediAuswahlUser.scrollIntoView({ behavior: "smooth" })
+    document.getElementById("medi-fab2").style.display = "none"
+  }
+  if (medi3 == true) {
+    mediAuswahlUser.innerHTML = "<p>Ich möchte daran erinnert werden, " + labelMedi3 + " einzunehmen.</p>"
+    mediAuswahlUser.style.opacity = "1"
+    mediAuswahlUser.scrollIntoView({ behavior: "smooth" })
+    document.getElementById("medi-fab2").style.display = "none"
+  }
+  if (medi4 == true) {
+    mediAuswahlUser.innerHTML = "<p>Ich möchte daran erinnert werden, " + labelMedi4 + " einzunehmen.</p>"
+    mediAuswahlUser.style.opacity = "1"
+    mediAuswahlUser.scrollIntoView({ behavior: "smooth" })
+    document.getElementById("medi-fab2").style.display = "none"
+  }
+  setTimeout(function () {
+    document.getElementById("bot-intervall-frage").style.opacity = "1"
+    var liste = document.getElementById("intervall-liste")
+    liste.style.opacity = "1"
+    document.getElementById("intervall-fab").style.display = "block"
+    liste.scrollIntoView({ behavior: "smooth" })
+  }, 1500)
+}
+
+// Intervall auswählen
+function Intervall() {
+  var inter1 = document.getElementById("inter-1").checked
+  var inter2 = document.getElementById("inter-2").checked
+  var inter3 = document.getElementById("inter-3").checked
+  var inter4 = document.getElementById("inter-4").checked
+  var inter5 = document.getElementById("inter-5").checked
+  var labelInter1 = document.getElementById("label-inter-1").innerHTML
+  var labelInter2 = document.getElementById("label-inter-2").innerHTML
+  var labelInter3 = document.getElementById("label-inter-3").innerHTML
+  var labelInter4 = document.getElementById("label-inter-4").innerHTML
+  var labelInter5 = document.getElementById("label-inter-5").innerHTML
+  var userIntervallConfirm = document.getElementById("user-intervall-confirm")
+  if (inter1 == true) {
+    userIntervallConfirm.innerHTML = "<p>Ich möchte " + labelInter1 + " an das Medikament erinnert werden.</p>"
+    userIntervallConfirm.style.opacity = "1"
+    userIntervallConfirm.scrollIntoView({ behavior: "smooth" })
+    document.getElementById("intervall-fab").style.display = "none"
+  }
+  if (inter2 == true) {
+    userIntervallConfirm.innerHTML = "<p>Ich möchte " + labelInter2 + " an das Medikament erinnert werden.</p>"
+    userIntervallConfirm.style.opacity = "1"
+    userIntervallConfirm.scrollIntoView({ behavior: "smooth" })
+    document.getElementById("intervall-fab").style.display = "none"
+  }
+  if (inter3 == true) {
+    userIntervallConfirm.innerHTML = "<p>Ich möchte " + labelInter3 + " an das Medikament erinnert werden.</p>"
+    userIntervallConfirm.style.opacity = "1"
+    userIntervallConfirm.scrollIntoView({ behavior: "smooth" })
+    document.getElementById("intervall-fab").style.display = "none"
+  }
+  if (inter4 == true) {
+    userIntervallConfirm.innerHTML = "<p>Ich möchte " + labelInter4 + " an das Medikament erinnert werden.</p>"
+    userIntervallConfirm.style.opacity = "1"
+    userIntervallConfirm.scrollIntoView({ behavior: "smooth" })
+    document.getElementById("intervall-fab").style.display = "none"
+  }
+  if (inter5 == true) {
+    userIntervallConfirm.innerHTML = "<p>Ich möchte " + labelInter5 + " an das Medikament erinnert werden.</p>"
+    userIntervallConfirm.style.opacity = "1"
+    userIntervallConfirm.scrollIntoView({ behavior: "smooth" })
+    document.getElementById("intervall-fab").style.display = "none"
+  }
+  setTimeout(function () {
+    document.getElementById("bot-frage-uhrzeit").style.opacity = "1"
+    document.getElementById("uhrzeit-input").style.opacity = "1"
+    document.getElementById("uhrzeit-fab").style.display = "block"
+  }, 1500)
+}
+
+// Erinnerung Uhrzeit
+function Uhrzeit() {
+  document.getElementById("uhrzeit-fab").style.display = "none"
+  var zeit = document.getElementById("uhrzeit-input")
+  zeit.style.opacity = "0"
+  var userConfirm = document.getElementById("user-uhrzeit-confirm")
+  userConfirm.innerHTML = "<p>Ich möchte um " + zeit.value + " Uhr erinnert werden.</p>"
+  userConfirm.style.opacity = "1"
+  setTimeout(function () {
+    document.getElementById("bot-confirm-erinnerung").style.opacity = "1"
+    var start = document.getElementById("start-btn")
+    start.style.opacity = "1"
+    start.scrollIntoView({ behavior: "smooth" })
   }, 1500)
 }

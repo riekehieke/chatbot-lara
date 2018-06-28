@@ -125,7 +125,7 @@
 .bot-msg p {
   padding: 0 3%;
 }
-#beschwerden-input, #datum-input {
+#beschwerden-input, #datum-input, #uhrzeit-input {
   opacity: 0;
   position: fixed;
   bottom: 5px;
@@ -144,10 +144,10 @@
 #bot-nachfrage {
   opacity: 0;
 }
-#symptome-liste, #klar, #arzt-auswahl, #aerzte-liste, #frage-termin, #user-datum, #frage-zeit, #termine-liste, #medi-auswahl, #medi-liste, #okay, #user-medi-liste, #bot-medi-bestätigung, #kein-problem, #bot-zeigen, #apo-list, #start-btn {
+#symptome-liste, #klar, #arzt-auswahl, #aerzte-liste, #frage-termin, #user-datum, #frage-zeit, #termine-liste, #medi-auswahl, #medi-liste, #okay, #user-medi-liste, #bot-medi-bestätigung, #kein-problem, #bot-zeigen, #apo-list, #start-btn, #ordnung, #bot-show-medi, #medi-liste2, #bot-intervall-frage, #intervall-liste, #bot-frage-uhrzeit, #bot-confirm-erinnerung {
   opacity: 0;
 }
-#migraene-fab, #meni-fab, #aerzte-fab, #datum-fab, #termine-fab, #medi-fab {
+#migraene-fab, #meni-fab, #aerzte-fab, #datum-fab, #termine-fab, #medi-fab, #medi-fab2, #intervall-fab, #uhrzeit-fab {
   display: none;
 }
 .diagnose-beobachten {
