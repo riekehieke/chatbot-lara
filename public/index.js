@@ -18,9 +18,6 @@ function Reload() {
     console.log("start pls")
     document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
   }
-  else {
-    console.log("reg pls")
-  }
 }
 
 document.addEventListener('init', function (event) {
@@ -603,7 +600,51 @@ function Uhrzeit() {
 }
 
 function Menu() {
+  console.log('menu start')
   document.getElementById("menu-list").classList.toggle("invisible")
+  console.log('menu success')
+}
+
+function MenuAkte() {
+  console.log('menu start')
+  document.getElementById("menu-list-akte").classList.toggle("invisible")
+  console.log('menu success')
+}
+
+function MenuRezept() {
+  console.log('menu start')
+  document.getElementById("menu-list-rezept").classList.toggle("invisible")
+  console.log('menu success')
+}
+function MenuApo() {
+  console.log('menu start')
+  document.getElementById("menu-list-apo").classList.toggle("invisible")
+  console.log('menu success')
+}
+function MenuEinst() {
+  console.log('menu start')
+  document.getElementById("menu-list-einst").classList.toggle("invisible")
+  console.log('menu success')
+}
+function MenuErin() {
+  console.log('menu start')
+  document.getElementById("menu-list-erin").classList.toggle("invisible")
+  console.log('menu success')
+}
+function MenuImp() {
+  console.log('menu start')
+  document.getElementById("menu-list-imp").classList.toggle("invisible")
+  console.log('menu success')
+}
+function MenuTermin() {
+  console.log('menu start')
+  document.getElementById("menu-list-termin").classList.toggle("invisible")
+  console.log('menu success')
+}
+function MenuUnwohl() {
+  console.log('menu start')
+  document.getElementById("menu-list-unwohl").classList.toggle("invisible")
+  console.log('menu success')
 }
 
 function Akte() {
@@ -632,4 +673,14 @@ function Clear() {
   localStorage.setItem('rezept', false)
   document.querySelector("#qr-rezept-akte").style.display = "none"
   document.getElementById("qr-rezept-fail-akte").style.display = "block"
+}
+
+function Logout() {
+  localStorage.setItem('regCode', 'no')
+  location.reload()
+}
+
+function Reset() {
+  localStorage.clear()
+  location.reload()
 }

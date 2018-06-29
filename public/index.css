@@ -239,7 +239,10 @@
   margin: 5% 0 0 0;
 }
 
-/* Akte */
-#akte {
+/* Context Menu */
+.context-menu {
   padding: 10% 5%;
+}
+.context-menu ons-button {
+  margin: 3% 0;
 }

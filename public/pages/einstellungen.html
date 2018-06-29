@@ -5,11 +5,11 @@
     </div>
     <div class="right">
       <ons-toolbar-button>
-        <ons-icon icon="md-more-vert" style="margin: 10px 15px;" size="25px" onclick="Menu()"></ons-icon>
+        <ons-icon icon="md-more-vert" style="margin: 10px 15px;" size="25px" onclick="MenuEinst()"></ons-icon>
       </ons-toolbar-button>
     </div>
   </ons-toolbar>
-  <div class="einstellung invisible" id="menu-list">
+  <div class="einstellung invisible" id="menu-list-einst">
     <ons-list>
       <ons-list-item onclick="Akte()" tappable ripple>
         Meine Akte
@@ -22,7 +22,11 @@
       </ons-list-item>
     </ons-list>
   </div>
-  <div style="margin: 10% 0 0 0;">
-    Hier werden Einstellungen angezeigt.
+  <div class="context-menu">
+    <h2>Einstellungen</h2>
+    <p>Hier können grundlegende Einstellungen vorgenommen werden.</p>
+    <ons-button modifier="large" onclick="Clear()">Rezepte löschen</ons-button>
+    <ons-button modifier="large" onclick="Logout()">Ausloggen</ons-button>
+    <ons-button modifier="large" onclick="Reset()">Alles zurücksetzen</ons-button>
   </div>
 </ons-page>
