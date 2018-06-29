@@ -1,25 +1,23 @@
 window.onload = Reload
 
+// Registrierungscode-Eingabe
 function regCode() {
-  var regCode = document.getElementById("reg-code").value;
-  if (regCode === "1") {
-    document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
+  var regCode = document.getElementById("reg-code").value
+  if (regCode === "68934521") {
+    document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } })
     localStorage.setItem('regCode', 'yes')
   }
 }
 
-function Start() {
-  location.reload()
-}
-
+// Seite neu laden
 function Reload() {
   var regCode = localStorage.getItem('regCode')
   if (regCode === 'yes') {
-    console.log("start pls")
     document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
   }
 }
 
+// Startseite Button Auswahl
 document.addEventListener('init', function (event) {
   var page = event.target;
 
@@ -53,7 +51,6 @@ document.addEventListener('init', function (event) {
     };
   }
 
-
   // Neues Rezept Seite
   if (page.id === 'start') {
     page.querySelector('#rezept-button').onclick = function () {
@@ -70,7 +67,7 @@ document.addEventListener('init', function (event) {
     };
   }
 
-  // Nächste Apotheke
+  // Nächste Apotheke Seite
   if (page.id === 'start') {
     page.querySelector('#apotheke-button').onclick = function () {
       document.querySelector('#nav').pushPage('pages/apotheke.html', { data: { title: 'Apotheke finden' } });
@@ -85,7 +82,7 @@ document.addEventListener('init', function (event) {
     };
   }
 
-  // Medikamente-Erinnerung
+  // Medikamente-Erinnerung Seite
   if (page.id === 'start') {
     page.querySelector('#erinnerung-button').onclick = function () {
       document.querySelector('#nav').pushPage('pages/erinnerung.html', { data: { title: 'An Medikamente erinnern' } });
@@ -101,9 +98,10 @@ document.addEventListener('init', function (event) {
     };
   }
 
-});
+})
 
-// Beschwerden analysieren
+// SYMPTOME ANALYSIEREN
+// Button: Beschwerden analysieren
 function Beschwerden() {
   var input = document.getElementById("beschwerden-input").value
   var bubble = document.getElementById('user-beschwerden')
@@ -112,13 +110,13 @@ function Beschwerden() {
   document.getElementById("beschwerden-input").value = ""
   document.getElementById("beschwerden-input").style.opacity = "0"
   document.getElementById("beschwerden-fab").style.opacity = "0"
-
-  //Antwort auf Input
   setTimeout(function () {
     var user = document.getElementById("p-user-beschwerden").innerHTML
     var bubble = document.getElementById("bot-nachfrage")
+    // !! Arrays mit Krankheiten
     var symptome1 = ["Kopfschmerzen", "hinter", "Augen", "morgens", "abends"]
     var symptome2 = ["Fieber", "steif", "Nacken"]
+    // Arrays mit Krankheiten !!
     if (symptome1.some(el => user.includes(el))) {
       bubble.innerHTML = "<p>Haben Sie außerdem eines oder mehrere dieser Symptome?</p>"
       bubble.style.opacity = "1"
@@ -155,6 +153,7 @@ function Beschwerden() {
   }, 1500)
 }
 
+// Button: Migräne weitere Beschwerden
 function Migraene() {
   var check1 = document.getElementById('check-1').checked
   var check2 = document.getElementById('check-2').checked
@@ -162,7 +161,6 @@ function Migraene() {
   var label1 = "eingeschränkte Sicht"
   var label2 = "Magen-Darm-Beschwerden"
   var label3 = "Appetitlosigkeit"
-  // Auswahl Liste in Chat anzeigen
   if (check1 == true) {
     var user = "<p>Ich habe " + label1 + ".</p>"
     document.getElementById("user-liste").innerHTML = user
@@ -199,21 +197,16 @@ function Migraene() {
     document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
   }
   document.getElementById("migraene-fab").style.display = "none"
-  // Warnung anzeigen
   setTimeout(function () {
     document.getElementById("diagnose-migraene").style.display = "block"
     document.getElementById("diagnose-migraene").scrollIntoView({ behavior: "smooth" });
-    // Zurück zum Start
     var start = document.getElementById("start-btn")
     start.style.opacity = "1"
     start.scrollIntoView({ behavior: "smooth" })
   }, 1000)
-  // // Zurück zum Start
-  // setTimeout(function () {
-  //   document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
-  // }, 6000)
 }
 
+// Button: Meningitis weitere Beschwerden
 function Meni() {
   var check1 = document.getElementById('check-1').checked
   var check2 = document.getElementById('check-2').checked
@@ -221,7 +214,6 @@ function Meni() {
   var label1 = "Gliederschmerzen"
   var label2 = "Kopfschmerzen"
   var label3 = "Übelkeit"
-  // Auswahl Liste in Chat anzeigen
   if (check1 == true) {
     var user = "<p>Ich habe " + label1 + ".</p>"
     document.getElementById("user-liste").innerHTML = user
@@ -258,17 +250,16 @@ function Meni() {
     document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
   }
   document.getElementById("meni-fab").style.display = "none"
-  // Warnung anzeigen
   setTimeout(function () {
     document.getElementById("diagnose-meni").style.display = "block"
     document.getElementById("diagnose-meni").scrollIntoView({ behavior: "smooth" });
-    // Zurück zum Start
     var start = document.getElementById("start-btn")
     start.style.opacity = "1"
     start.scrollIntoView({ behavior: "smooth" })
   }, 1000)
 }
 
+// ARZTTERMIN VEREINBAREN
 // Datum eingeben
 function DatumEingabe() {
   document.getElementById('frage-termin').style.opacity = "1"
@@ -277,7 +268,7 @@ function DatumEingabe() {
   document.getElementById('datum-fab').style.display = "block"
 }
 
-// Termin: Arzt auswählen
+// Arzt auswählen
 function Termin() {
   var radio1 = document.getElementById("arzt-1").checked
   var radio2 = document.getElementById("arzt-2").checked
@@ -311,8 +302,7 @@ function Termin() {
   setTimeout(DatumEingabe(), 1000)
 }
 
-
-// Termin: Datum auswählen
+// Datum anzeigen, Uhrzeit fragen
 function Datum() {
   var datum = document.getElementById("datum-input").value
   var user = document.getElementById("user-datum")
@@ -329,7 +319,7 @@ function Datum() {
   }, 1500)
 }
 
-// Termin: Zeit auswählen
+// Zeit auswählen & anzeigen
 function Zeit() {
   var zeit1 = document.getElementById("termin-1").checked
   var zeit2 = document.getElementById("termin-2").checked
@@ -351,7 +341,6 @@ function Zeit() {
       confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin1 + "eingetragen."
       confirm.style.opacity = "1"
       confirm.scrollIntoView({ behavior: "smooth" })
-      // Zurück zum Start
       var start = document.getElementById("start-btn")
       start.style.opacity = "1"
       start.scrollIntoView({ behavior: "smooth" })
@@ -367,7 +356,6 @@ function Zeit() {
       confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin2 + "eingetragen."
       confirm.style.opacity = "1"
       confirm.scrollIntoView({ behavior: "smooth" })
-      // Zurück zum Start
       var start = document.getElementById("start-btn")
       start.style.opacity = "1"
       start.scrollIntoView({ behavior: "smooth" })
@@ -383,7 +371,6 @@ function Zeit() {
       confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin3 + "eingetragen."
       confirm.style.opacity = "1"
       confirm.scrollIntoView({ behavior: "smooth" })
-      // Zurück zum Start
       var start = document.getElementById("start-btn")
       start.style.opacity = "1"
       start.scrollIntoView({ behavior: "smooth" })
@@ -399,7 +386,6 @@ function Zeit() {
       confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin4 + "eingetragen."
       confirm.style.opacity = "1"
       confirm.scrollIntoView({ behavior: "smooth" })
-      // Zurück zum Start
       var start = document.getElementById("start-btn")
       start.style.opacity = "1"
       start.scrollIntoView({ behavior: "smooth" })
@@ -414,7 +400,8 @@ function Zeit() {
   }
 }
 
-// Rezept: Medikament auswählen
+// REZEPT ERNEUERN
+// Medikament auswählen
 function Medi() {
   var medi1 = document.getElementById("medi-1").checked
   var medi2 = document.getElementById("medi-2").checked
@@ -456,7 +443,7 @@ function Medi() {
     document.getElementById("bot-medi-bestätigung").style.opacity = "1"
   }, 1500)
   setTimeout(function () {
-    // Digitales Rezept anzeigen
+    // Digitales Rezept anzeigen (nach 5 Sekunden Wartezeit)
     if (medi1 == true || medi2 == true || medi4 == true) {
       localStorage.setItem('rezept', true)
       var rezeptQR = document.getElementById("qr-rezept")
@@ -476,7 +463,7 @@ function Medi() {
   }, 5000)
 }
 
-// Rezept-Seite Weiterleitung Arzttermin vereinbaren
+// Weiterleitung Arzttermin vereinbaren
 function Arzt() {
   document.querySelector('#nav').pushPage('pages/termin.html', { data: { title: 'Arzttermin' } });
   setTimeout(function () {
@@ -489,7 +476,8 @@ function Arzt() {
   }, 1500)
 }
 
-// Erinnerung Seite Medikament Auswahl
+// MEDIKAMENTEN ERINNERUNG EINSTELLEN
+// Medikament auswählen
 function Erinnerung() {
   var medi1 = document.getElementById("medi-1").checked
   var medi2 = document.getElementById("medi-2").checked
@@ -583,7 +571,7 @@ function Intervall() {
   }, 1500)
 }
 
-// Erinnerung Uhrzeit
+// Uhrzeit eingeben
 function Uhrzeit() {
   document.getElementById("uhrzeit-fab").style.display = "none"
   var zeit = document.getElementById("uhrzeit-input")
@@ -599,59 +587,41 @@ function Uhrzeit() {
   }, 1500)
 }
 
+
+// CONTEXT MENU ANZEIGEN
 function Menu() {
-  console.log('menu start')
   document.getElementById("menu-list").classList.toggle("invisible")
-  console.log('menu success')
 }
-
 function MenuAkte() {
-  console.log('menu start')
   document.getElementById("menu-list-akte").classList.toggle("invisible")
-  console.log('menu success')
 }
-
 function MenuRezept() {
-  console.log('menu start')
   document.getElementById("menu-list-rezept").classList.toggle("invisible")
-  console.log('menu success')
 }
 function MenuApo() {
-  console.log('menu start')
   document.getElementById("menu-list-apo").classList.toggle("invisible")
-  console.log('menu success')
 }
 function MenuEinst() {
-  console.log('menu start')
   document.getElementById("menu-list-einst").classList.toggle("invisible")
-  console.log('menu success')
 }
 function MenuErin() {
-  console.log('menu start')
   document.getElementById("menu-list-erin").classList.toggle("invisible")
-  console.log('menu success')
 }
 function MenuImp() {
-  console.log('menu start')
   document.getElementById("menu-list-imp").classList.toggle("invisible")
-  console.log('menu success')
 }
 function MenuTermin() {
-  console.log('menu start')
   document.getElementById("menu-list-termin").classList.toggle("invisible")
-  console.log('menu success')
 }
 function MenuUnwohl() {
-  console.log('menu start')
   document.getElementById("menu-list-unwohl").classList.toggle("invisible")
-  console.log('menu success')
 }
 
+// Context-Menu Auswahl "Akte"
 function Akte() {
   document.querySelector('#nav').pushPage('pages/akte.html', { data: { title: 'Meine Akte' } });
   setTimeout(function () {
     var rezept = localStorage.getItem('rezept')
-    console.log(rezept)
     if (rezept = true) {
       document.querySelector("#qr-rezept-akte").style.display = "block"
     }
@@ -660,27 +630,33 @@ function Akte() {
     }
   }, 500)
 }
-
+// Context-Menu Auswahl "Einstellungen"
 function Einstellungen() {
   document.querySelector('#nav').pushPage('pages/einstellungen.html', { data: { title: 'Meine Akte' } });
 }
-
+// Context-Menu Auswahl "Impressum"
 function Impressum() {
   document.querySelector('#nav').pushPage('pages/impressum.html', { data: { title: 'Meine Akte' } });
 }
 
+// FUNKTIONEN BEI BUTTON CLICK
+// Rezept Storage löschen
 function Clear() {
   localStorage.setItem('rezept', false)
   document.querySelector("#qr-rezept-akte").style.display = "none"
   document.getElementById("qr-rezept-fail-akte").style.display = "block"
 }
-
+// RegCode Storage löschen
 function Logout() {
   localStorage.setItem('regCode', 'no')
   location.reload()
 }
-
+// LocalStorage komplett löschen
 function Reset() {
   localStorage.clear()
+  location.reload()
+}
+// Zurück zum Start
+function Start() {
   location.reload()
 }
