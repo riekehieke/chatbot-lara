@@ -22,7 +22,37 @@
       </ons-list-item>
     </ons-list>
   </div>
-  <div style="margin: 10% 0 0 0;">
-    Hier werden persönliche Daten etc angezeigt.
+  <div id="akte">
+    <h3>Meine Daten</h3>
+    <p>
+      Name: Tester<br>
+      Alter: 24 Jahre<br>
+      Wohnort: Bremerhaven
+    </p>
+    <h3>Meine Ärzte</h3>
+    <p>
+      HNO-Arzt Dr. Rembert Mammes <br>
+      Allgemeinarzt Dr. Susanne Najuch <br>
+      Hautarzt Dr. Florian Grotelüschen <br>
+      Augenarzt Dr. Karl Bittermann
+    </p>
+    <h3>Meine Medikamente</h3>
+    <p>
+      Azathioprin <br>
+      Marcumar <br>
+      Favistan <br>
+      Prednisolon
+    </p>
+    <h3>Meine Rezepte</h3>
+    <div class="rezept" id="qr-rezept-akte">
+      <h3>Ihr digitales Rezept</h3>
+      <p>steht bereit. Bitte zeigen Sie diesen QR-Code in der Apotheke vor, um ihr Medikament zu erhalten.</p>
+      <img src="assets/qr.png" alt="QR Code">
+    </div>
+    <div class="rezept" id="qr-rezept-fail-akte">
+      <h3>Kein Rezept vorhanden</h3>
+      <p>Aktuell liegt kein Rezept zum einlösen vor.</p>
+    </div>
+    <ons-button modifier="large" onclick="Clear()">Rezept eingelöst</ons-button>
   </div>
 </ons-page>

@@ -448,6 +448,7 @@ function Medi() {
   setTimeout(function () {
     // Digitales Rezept anzeigen
     if (medi1 == true || medi2 == true || medi4 == true) {
+      localStorage.setItem('rezept', true)
       var rezeptQR = document.getElementById("qr-rezept")
       rezeptQR.style.display = "block"
       var start = document.getElementById("start-btn")
@@ -455,6 +456,7 @@ function Medi() {
       start.scrollIntoView({ behavior: "smooth" })
     }
     if (medi3 == true) {
+      localStorage.setItem('rezept', false)
       var rezeptQRFail = document.getElementById("qr-rezept-fail")
       rezeptQRFail.style.display = "block"
       var rezeptArzt = document.getElementById("rezept-arzt")
@@ -593,6 +595,16 @@ function Menu() {
 
 function Akte() {
   document.querySelector('#nav').pushPage('pages/akte.html', { data: { title: 'Meine Akte' } });
+  setTimeout(function () {
+    var rezept = localStorage.getItem('rezept')
+    console.log(rezept)
+    if (rezept = true) {
+      document.querySelector("#qr-rezept-akte").style.display = "block"
+    }
+    if (rezept = false) {
+      document.getElementById("qr-rezept-fail-akte").style.display = "block"
+    }
+  }, 500)
 }
 
 function Einstellungen() {
@@ -601,4 +613,10 @@ function Einstellungen() {
 
 function Impressum() {
   document.querySelector('#nav').pushPage('pages/impressum.html', { data: { title: 'Meine Akte' } });
+}
+
+function Clear() {
+  localStorage.setItem('rezept', false)
+  document.querySelector("#qr-rezept-akte").style.display = "none"
+  document.getElementById("qr-rezept-fail-akte").style.display = "block"
 }

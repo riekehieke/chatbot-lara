@@ -170,7 +170,7 @@
 #symptome-liste, #klar, #arzt-auswahl, #aerzte-liste, #frage-termin, #user-datum, #frage-zeit, #termine-liste, #medi-auswahl, #medi-liste, #okay, #user-medi-liste, #bot-medi-bestätigung, #kein-problem, #bot-zeigen, #apo-list, #start-btn, #ordnung, #bot-show-medi, #medi-liste2, #bot-intervall-frage, #intervall-liste, #bot-frage-uhrzeit, #bot-confirm-erinnerung {
   opacity: 0;
 }
-#migraene-fab, #meni-fab, #aerzte-fab, #datum-fab, #termine-fab, #medi-fab, #medi-fab2, #intervall-fab, #uhrzeit-fab {
+#migraene-fab, #meni-fab, #aerzte-fab, #datum-fab, #termine-fab, #medi-fab, #medi-fab2, #intervall-fab, #uhrzeit-fab, #qr-rezept-akte, #qr-rezept-fail-akte {
   display: none;
 }
 .diagnose-beobachten {
@@ -237,4 +237,9 @@
 
 #start-btn {
   margin: 5% 0 0 0;
+}
+
+/* Akte */
+#akte {
+  padding: 10% 5%;
 }
