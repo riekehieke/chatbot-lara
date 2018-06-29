@@ -1,10 +1,27 @@
+window.onload = Reload
+
 function regCode() {
   var regCode = document.getElementById("reg-code").value;
   if (regCode === "1") {
     document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
+    localStorage.setItem('regCode', 'yes')
   }
 }
 
+function Start() {
+  location.reload()
+}
+
+function Reload() {
+  var regCode = localStorage.getItem('regCode')
+  if (regCode === 'yes') {
+    console.log("start pls")
+    document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
+  }
+  else {
+    console.log("reg pls")
+  }
+}
 
 document.addEventListener('init', function (event) {
   var page = event.target;
@@ -88,10 +105,6 @@ document.addEventListener('init', function (event) {
   }
 
 });
-
-function Start() {
-  document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } });
-}
 
 // Beschwerden analysieren
 function Beschwerden() {
