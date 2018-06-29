@@ -3,7 +3,7 @@ window.onload = Reload
 // Registrierungscode-Eingabe
 function regCode() {
   var regCode = document.getElementById("reg-code").value
-  if (regCode === "68934521") {
+  if (regCode === "789456123") {
     document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } })
     localStorage.setItem('regCode', 'yes')
   }
