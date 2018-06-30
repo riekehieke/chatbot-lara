@@ -445,7 +445,7 @@ function Medi() {
   setTimeout(function () {
     // Digitales Rezept anzeigen (nach 5 Sekunden Wartezeit)
     if (medi1 == true || medi2 == true || medi4 == true) {
-      localStorage.setItem('rezept', true)
+      localStorage.setItem('rezept', 'yes')
       var rezeptQR = document.getElementById("qr-rezept")
       rezeptQR.style.display = "block"
       var start = document.getElementById("start-btn")
@@ -453,7 +453,7 @@ function Medi() {
       start.scrollIntoView({ behavior: "smooth" })
     }
     if (medi3 == true) {
-      localStorage.setItem('rezept', false)
+      localStorage.setItem('rezept', 'no')
       var rezeptQRFail = document.getElementById("qr-rezept-fail")
       rezeptQRFail.style.display = "block"
       var rezeptArzt = document.getElementById("rezept-arzt")
@@ -622,10 +622,10 @@ function Akte() {
   document.querySelector('#nav').pushPage('pages/akte.html', { data: { title: 'Meine Akte' } });
   setTimeout(function () {
     var rezept = localStorage.getItem('rezept')
-    if (rezept = true) {
+    if (rezept === 'yes') {
       document.querySelector("#qr-rezept-akte").style.display = "block"
     }
-    if (rezept = false) {
+    if (rezept === 'no') {
       document.getElementById("qr-rezept-fail-akte").style.display = "block"
     }
   }, 500)
@@ -642,7 +642,7 @@ function Impressum() {
 // FUNKTIONEN BEI BUTTON CLICK
 // Rezept Storage löschen
 function Clear() {
-  localStorage.setItem('rezept', false)
+  localStorage.setItem('rezept', 'no')
   document.querySelector("#qr-rezept-akte").style.display = "none"
   document.getElementById("qr-rezept-fail-akte").style.display = "block"
 }
