@@ -94,6 +94,9 @@
   text-align: center;
   margin: 10% 0 0 0;
 }
+.anrede p {
+  margin: 3% 7%;
+}
 
 /* Context-Menü */
 .einstellung {
