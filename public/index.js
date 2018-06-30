@@ -260,12 +260,20 @@ function Meni() {
 }
 
 // ARZTTERMIN VEREINBAREN
-// Datum eingeben
-function DatumEingabe() {
-  document.getElementById('frage-termin').style.opacity = "1"
-  document.getElementById('frage-termin').scrollIntoView({ behavior: "smooth" });
-  document.getElementById('datum-input').style.opacity = "1"
-  document.getElementById('datum-fab').style.display = "block"
+// Mindest Datum Morgen
+function MinDate() {
+  var heute = new Date()
+  var monat = heute.getMonth() + 1
+  var tag = heute.getDate()
+  var jahr = heute.getFullYear()
+  if (monat < 10)
+    monat = '0' + monat.toString()
+  if (tag < 10)
+    tag = '0' + tag.toString()
+  var minDate = jahr + '-' + monat + '-' + tag
+  console.log(minDate)
+  document.getElementById('datum-input').setAttribute('min', minDate)
+  console.log('minified')
 }
 
 // Arzt auswählen
@@ -302,13 +310,27 @@ function Termin() {
   setTimeout(DatumEingabe(), 1000)
 }
 
+// Datum eingeben
+function DatumEingabe() {
+  document.getElementById('frage-termin').style.opacity = "1"
+  document.getElementById('frage-termin').scrollIntoView({ behavior: "smooth" })
+  MinDate()
+  document.getElementById('datum-input').style.opacity = "1"
+  document.getElementById('datum-fab').style.display = "block"
+}
+
 // Datum anzeigen, Uhrzeit fragen
 function Datum() {
   var datum = document.getElementById("datum-input").value
+  var datumArray = datum.split("-")
+  var jahr = datumArray[0]
+  var monat = datumArray[1]
+  var tag = datumArray[2]
+  var date = tag + '.' + monat + '.' + jahr
   var user = document.getElementById("user-datum")
   document.getElementById('datum-input').style.opacity = "0"
   document.getElementById('datum-fab').style.display = "none"
-  user.innerHTML = "<p>Der Termin sollte am besten am " + datum + " sein.</p>"
+  user.innerHTML = "<p>Der Termin sollte am besten am " + date + " sein.</p>"
   user.style.opacity = "1"
   user.scrollIntoView({ behavior: "smooth" })
   setTimeout(function () {
