@@ -320,13 +320,14 @@ function DatumEingabe() {
 }
 
 // Datum anzeigen, Uhrzeit fragen
+var date
 function Datum() {
   var datum = document.getElementById("datum-input").value
   var datumArray = datum.split("-")
   var jahr = datumArray[0]
   var monat = datumArray[1]
   var tag = datumArray[2]
-  var date = tag + '.' + monat + '.' + jahr
+  date = tag + '.' + monat + '.' + jahr
   var user = document.getElementById("user-datum")
   document.getElementById('datum-input').style.opacity = "0"
   document.getElementById('datum-fab').style.display = "none"
@@ -358,9 +359,8 @@ function Zeit() {
     document.getElementById("user-zeit").innerHTML = user
     document.getElementById("user-zeit").scrollIntoView({ behavior: "smooth" });
     setTimeout(function () {
-      var datum = document.getElementById("datum-input").value
       var confirm = document.getElementById("bot-termin-confirm")
-      confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin1 + "eingetragen."
+      confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + date + " um " + termin1 + "eingetragen."
       confirm.style.opacity = "1"
       confirm.scrollIntoView({ behavior: "smooth" })
       var start = document.getElementById("start-btn")
@@ -373,9 +373,8 @@ function Zeit() {
     document.getElementById("user-zeit").innerHTML = user
     document.getElementById("user-zeit").scrollIntoView({ behavior: "smooth" });
     setTimeout(function () {
-      var datum = document.getElementById("datum-input").value
       var confirm = document.getElementById("bot-termin-confirm")
-      confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin2 + "eingetragen."
+      confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + date + " um " + termin2 + "eingetragen."
       confirm.style.opacity = "1"
       confirm.scrollIntoView({ behavior: "smooth" })
       var start = document.getElementById("start-btn")
@@ -388,9 +387,8 @@ function Zeit() {
     document.getElementById("user-zeit").innerHTML = user
     document.getElementById("user-zeit").scrollIntoView({ behavior: "smooth" });
     setTimeout(function () {
-      var datum = document.getElementById("datum-input").value
       var confirm = document.getElementById("bot-termin-confirm")
-      confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin3 + "eingetragen."
+      confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + date + " um " + termin3 + "eingetragen."
       confirm.style.opacity = "1"
       confirm.scrollIntoView({ behavior: "smooth" })
       var start = document.getElementById("start-btn")
@@ -403,9 +401,8 @@ function Zeit() {
     document.getElementById("user-zeit").innerHTML = user
     document.getElementById("user-zeit").scrollIntoView({ behavior: "smooth" });
     setTimeout(function () {
-      var datum = document.getElementById("datum-input").value
       var confirm = document.getElementById("bot-termin-confirm")
-      confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + datum + " um " + termin4 + "eingetragen."
+      confirm.innerHTML = "<p>Super. Ich habe Ihren Termin am " + date + " um " + termin4 + "eingetragen."
       confirm.style.opacity = "1"
       confirm.scrollIntoView({ behavior: "smooth" })
       var start = document.getElementById("start-btn")
