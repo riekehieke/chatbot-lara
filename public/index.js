@@ -148,7 +148,8 @@ function Beschwerden() {
         document.getElementById("beschwerden-fab").style.opacity = "1"
         bubble.innerHTML = ""
         bubble.style.opacity = "0"
-      }, 2000)
+      }, 4000)
+
     }
   }, 1500)
 }
