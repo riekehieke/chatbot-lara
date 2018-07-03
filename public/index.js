@@ -275,22 +275,6 @@ function Meni() {
 }
 
 // ARZTTERMIN VEREINBAREN
-// Mindest Datum Morgen
-function MinDate() {
-  var heute = new Date()
-  var monat = heute.getMonth() + 1
-  var tag = heute.getDate()
-  var jahr = heute.getFullYear()
-  if (monat < 10)
-    monat = '0' + monat.toString()
-  if (tag < 10)
-    tag = '0' + tag.toString()
-  var minDate = jahr + '-' + monat + '-' + tag
-  console.log(minDate)
-  document.getElementById('datum-input').setAttribute('min', minDate)
-  console.log('minified')
-}
-
 // Arzt auswählen
 function Termin() {
   var radio1 = document.getElementById("arzt-1").checked
@@ -336,7 +320,6 @@ function Termin() {
 function DatumEingabe() {
   document.getElementById('frage-termin').style.opacity = "1"
   document.getElementById('frage-termin').scrollIntoView({ behavior: "smooth" })
-  MinDate()
   document.getElementById('datum-input').style.opacity = "1"
   document.getElementById('datum-fab').style.display = "block"
 }
@@ -345,9 +328,25 @@ function DatumEingabe() {
 var date
 function Datum() {
   var datum = document.getElementById("datum-input").value
+  var heute = new Date()
+  var monat = heute.getMonth() + 1
+  var tag = heute.getDate()
+  var jahr = heute.getFullYear()
+  if (monat < 10)
+    monat = '0' + monat.toString()
+  if (tag < 10)
+    tag = '0' + tag.toString()
+  var minDate = jahr + '-' + monat + '-' + tag
   if (datum === "") {
     ons.notification.alert({
       message: 'Bitte geben Sie ein Datum ein.',
+      title: "Fehler"
+    })
+    return
+  }
+  if (datum < minDate) {
+    ons.notification.alert({
+      message: 'Ein Termin kann frühstens für heute gemacht werden. Bitte geben Sie ein gültiges Datum ein.',
       title: "Fehler"
     })
     return
