@@ -232,7 +232,7 @@
 }
 
 /* Back to Start Button */
-#start-btn {
+#start-btn, #start-btn2 {
   margin: 5% 0 0 0;
 }
 
@@ -242,6 +242,6 @@
 }
 
 /* Display: None */
-#migraene-fab, #meni-fab, #aerzte-fab, #datum-fab, #termine-fab, #medi-fab, #medi-fab2, #intervall-fab, #uhrzeit-fab, #qr-rezept-akte, #qr-rezept-fail-akte, #diagnose-migraene, #diagnose-meni, #qr-rezept, #qr-rezept-fail, #rezept-arzt{
+#migraene-fab, #meni-fab, #aerzte-fab, #datum-fab, #termine-fab, #medi-fab, #medi-fab2, #intervall-fab, #uhrzeit-fab, #qr-rezept-akte, #qr-rezept-fail-akte, #diagnose-migraene, #diagnose-meni, #qr-rezept, #qr-rezept-fail, #rezept-arzt, #start-btn2 {
   display: none;
 }

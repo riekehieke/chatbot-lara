@@ -104,6 +104,13 @@ document.addEventListener('init', function (event) {
 // Button: Beschwerden analysieren
 function Beschwerden() {
   var input = document.getElementById("beschwerden-input").value
+  if (input === "") {
+    ons.notification.alert({
+      message: 'Bitte geben Sie Ihre Beschwerden ein.',
+      title: "Fehler"
+    })
+    return
+  }
   var bubble = document.getElementById('user-beschwerden')
   bubble.innerHTML = "<p id='p-user-beschwerden'>" + input + "</p>"
   bubble.style.opacity = "1"
@@ -197,6 +204,11 @@ function Migraene() {
     document.getElementById("user-liste").innerHTML = user
     document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
   }
+  if (check1 == false && check2 == false && check3 == false) {
+    var user = "<p>Ich habe keine weiteren Beschwerden.</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
   document.getElementById("migraene-fab").style.display = "none"
   setTimeout(function () {
     document.getElementById("diagnose-migraene").style.display = "block"
@@ -247,6 +259,11 @@ function Meni() {
   }
   if (check1 == true && check2 == true && check3 == true) {
     var user = "<p>Ich habe " + label1 + ", " + label2 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == false && check2 == false && check3 == false) {
+    var user = "<p>Ich habe keine weiteren Beschwerden.</p>"
     document.getElementById("user-liste").innerHTML = user
     document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
   }
@@ -307,6 +324,13 @@ function Termin() {
     document.getElementById("user-liste-arzt").innerHTML = user
     document.getElementById("user-liste-arzt").scrollIntoView({ behavior: "smooth" });
   }
+  if (radio1 == false && radio2 == false && radio3 == false && radio4 == false) {
+    ons.notification.alert({
+      message: 'Bitte wählen Sie einen Arzt aus.',
+      title: "Fehler"
+    })
+    return
+  }
   document.getElementById("aerzte-fab").style.display = "none"
   setTimeout(DatumEingabe(), 1000)
 }
@@ -324,6 +348,13 @@ function DatumEingabe() {
 var date
 function Datum() {
   var datum = document.getElementById("datum-input").value
+  if (datum === "") {
+    ons.notification.alert({
+      message: 'Bitte geben Sie ein Datum ein.',
+      title: "Fehler"
+    })
+    return
+  }
   var datumArray = datum.split("-")
   var jahr = datumArray[0]
   var monat = datumArray[1]
@@ -354,7 +385,6 @@ function Zeit() {
   var termin2 = document.getElementById("label-termin-2").innerHTML
   var termin3 = document.getElementById("label-termin-3").innerHTML
   var termin4 = document.getElementById("label-termin-4").innerHTML
-  document.getElementById("termine-fab").style.display = "none"
   if (zeit1 == true) {
     var user = "<p>Ich möchte den Termin um " + termin1 + " wahrnehmen.</p>"
     document.getElementById("user-zeit").innerHTML = user
@@ -418,6 +448,14 @@ function Zeit() {
     DatumEingabe()
     return
   }
+  if (zeit1 == false && zeit2 == false && zeit3 == false && zeit4 == false && zeit5 == false) {
+    ons.notification.alert({
+      message: 'Bitte treffen Sie eine Auswahl.',
+      title: "Fehler"
+    })
+    return
+  }
+  document.getElementById("termine-fab").style.display = "none"
 }
 
 // REZEPT ERNEUERN
@@ -458,6 +496,13 @@ function Medi() {
     user.scrollIntoView({ behavior: "smooth" })
     rezeptMedi.innerHTML = "Für " + labelMedi4 + " steht bereit. Bitte zeigen Sie diesen QR-Code in der Apotheke vor, um ihr Medikament zu erhalten."
   }
+  if (medi1 == false && medi2 == false && medi3 == false && medi4 == false) {
+    ons.notification.alert({
+      message: 'Bitte wählen Sie ein Medikament aus.',
+      title: "Fehler"
+    })
+    return
+  }
   document.getElementById("medi-fab").style.display = "none"
   setTimeout(function () {
     document.getElementById("bot-medi-bestätigung").style.opacity = "1"
@@ -477,8 +522,10 @@ function Medi() {
       var rezeptQRFail = document.getElementById("qr-rezept-fail")
       rezeptQRFail.style.display = "block"
       var rezeptArzt = document.getElementById("rezept-arzt")
+      var startBtn = document.getElementById("start-btn2")
       rezeptArzt.style.display = "block"
-      rezeptArzt.scrollIntoView({ behavior: "smooth" })
+      startBtn.style.display = "block"
+      startBtn.scrollIntoView({ behavior: "smooth" })
     }
   }, 5000)
 }
@@ -532,6 +579,13 @@ function Erinnerung() {
     mediAuswahlUser.scrollIntoView({ behavior: "smooth" })
     document.getElementById("medi-fab2").style.display = "none"
   }
+  if (medi1 == false && medi2 == false && medi3 == false && medi4 == false) {
+    ons.notification.alert({
+      message: 'Bitte wählen Sie ein Medikament aus.',
+      title: "Fehler"
+    })
+    return
+  }
   setTimeout(function () {
     document.getElementById("bot-intervall-frage").style.opacity = "1"
     var liste = document.getElementById("intervall-liste")
@@ -584,6 +638,13 @@ function Intervall() {
     userIntervallConfirm.scrollIntoView({ behavior: "smooth" })
     document.getElementById("intervall-fab").style.display = "none"
   }
+  if (inter1 == false && inter2 == false && inter3 == false && inter4 == false && inter5 == false) {
+    ons.notification.alert({
+      message: 'Bitte treffen Sie eine Auswahl.',
+      title: "Fehler"
+    })
+    return
+  }
   setTimeout(function () {
     document.getElementById("bot-frage-uhrzeit").style.opacity = "1"
     document.getElementById("uhrzeit-input").style.opacity = "1"
@@ -593,8 +654,15 @@ function Intervall() {
 
 // Uhrzeit eingeben
 function Uhrzeit() {
-  document.getElementById("uhrzeit-fab").style.display = "none"
   var zeit = document.getElementById("uhrzeit-input")
+  if (zeit.value === "") {
+    ons.notification.alert({
+      message: 'Bitte geben Sie eine Uhrzeit ein.',
+      title: "Fehler"
+    })
+    return
+  }
+  document.getElementById("uhrzeit-fab").style.display = "none"
   zeit.style.opacity = "0"
   var userConfirm = document.getElementById("user-uhrzeit-confirm")
   userConfirm.innerHTML = "<p>Ich möchte um " + zeit.value + " Uhr erinnert werden.</p>"
