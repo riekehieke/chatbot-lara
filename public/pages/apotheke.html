@@ -26,16 +26,19 @@
     <div class="user-msg" style="margin-top: 10%;">
       <p>Wo finde ich die nächste Apotheke?</p>
     </div>
-    <div class="bot-msg" id="kein-problem">
-      <p>Kein Problem.</p>
+    <!-- Test: Range Slider -->
+    <div class="bot-msg" id="bot-umkreis">
+      <p>In welchem Umkreis soll ich nach Apotheken suchen?</p>
+    </div>
+    <div class="user-msg" id="user-msg-umkreis">
     </div>
     <div class="bot-msg" id="bot-zeigen">
-      <p>Ich zeige Ihnen alle Apotheken im Umkreis von 700 Metern.</p>
     </div>
     <ons-list id="apo-list" class="bot-msg-liste">
       <ons-list-item expandable>
         Apotheke zum Löwen
         <div class="expandable-content">
+          <p id="entfernung-1"></p>
           <h4>Öffnungszeiten</h4>
           <p>Mo-Fr 09:00-18:00</p>
           <h4>Telefonnummer</h4>
@@ -49,6 +52,7 @@
       <ons-list-item expandable>
         Rosen-Apotheke
         <div class="expandable-content">
+          <p id="entfernung-2"></p>
           <h4>Öffnungszeiten</h4>
           <p>Mo-Fr 09:00-18:00</p>
           <h4>Telefonnummer</h4>
@@ -62,6 +66,7 @@
       <ons-list-item expandable>
         Sander Apotheke
         <div class="expandable-content">
+          <p id="entfernung-3"></p>
           <h4>Öffnungszeiten</h4>
           <p>Mo-Fr 09:00-18:00</p>
           <h4>Telefonnummer</h4>
@@ -75,6 +80,7 @@
       <ons-list-item expandable>
         Apotheke am Neumarkt
         <div class="expandable-content">
+          <p id="entfernung-4"></p>
           <h4>Öffnungszeiten</h4>
           <p>Mo-Fr 09:00-18:00</p>
           <h4>Telefonnummer</h4>
@@ -88,6 +94,7 @@
       <ons-list-item expandable>
         Stern Apotheke
         <div class="expandable-content">
+          <p id="entfernung-5"></p>
           <h4>Öffnungszeiten</h4>
           <p>Mo-Fr 09:00-18:00</p>
           <h4>Telefonnummer</h4>
@@ -99,6 +106,23 @@
         </div>
       </ons-list-item>
     </ons-list>
+    <div id="range">
+      <ons-row>
+        <ons-col width="25%" style="text-align: center; line-height: 31px;">
+          100 m
+        </ons-col>
+        <ons-col>
+          <ons-range style="width: 100%;" value="50" id="range-apo"></ons-range>
+        </ons-col>
+        <ons-col width="25%" style="text-align: center; line-height: 31px;">
+          1 km
+        </ons-col>
+      </ons-row>
+    </div>
+    <ons-fab position="bottom right" modifier="mini" id="apo-fab" onclick="Apotheke()">
+      <ons-icon icon="md-check"></ons-icon>
+    </ons-fab>
+
     <ons-button modifier="large" id="start-btn" onclick="Start()">Zurück zum Start</ons-button>
   </div>
 </ons-page>

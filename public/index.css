@@ -211,6 +211,12 @@
 }
 
 /* Apothekenfinder Expandable List */
+#range {
+  width: 85%;
+  position: fixed;
+  bottom: 18px;
+  left: 2px;
+}
 .expandable-content p {
   font-size: 0.8rem;
   line-height: 0.7rem;
@@ -228,7 +234,7 @@
   padding: 2% 0 0 0;
 }
 .expandable-content {
-  padding: 0;
+  padding: 0 0 5% 0;
 }
 
 /* Back to Start Button */
@@ -237,11 +243,11 @@
 }
 
 /* Opacity: 0 */
-#beschwerden, #beschwerden-fab, #user-beschwerden, #bot-nachfrage, #symptome-liste, #klar, #arzt-auswahl, #aerzte-liste, #frage-termin, #user-datum, #frage-zeit, #termine-liste, #medi-auswahl, #medi-liste, #okay, #user-medi-liste, #bot-medi-bestätigung, #kein-problem, #bot-zeigen, #apo-list, #start-btn, #ordnung, #bot-show-medi, #medi-liste2, #bot-intervall-frage, #intervall-liste, #bot-frage-uhrzeit, #bot-confirm-erinnerung {
+#beschwerden, #beschwerden-fab, #user-beschwerden, #bot-nachfrage, #symptome-liste, #klar, #arzt-auswahl, #aerzte-liste, #frage-termin, #user-datum, #frage-zeit, #termine-liste, #medi-auswahl, #medi-liste, #okay, #user-medi-liste, #bot-medi-bestätigung, #bot-zeigen, #bot-umkreis, #apo-list, #start-btn, #ordnung, #bot-show-medi, #medi-liste2, #bot-intervall-frage, #intervall-liste, #bot-frage-uhrzeit, #bot-confirm-erinnerung, #user-msg-umkreis {
   opacity: 0;
 }
 
 /* Display: None */
-#migraene-fab, #meni-fab, #aerzte-fab, #datum-fab, #termine-fab, #medi-fab, #medi-fab2, #intervall-fab, #uhrzeit-fab, #qr-rezept-akte, #qr-rezept-fail-akte, #diagnose-migraene, #diagnose-meni, #qr-rezept, #qr-rezept-fail, #rezept-arzt, #start-btn2 {
+#migraene-fab, #meni-fab, #aerzte-fab, #datum-fab, #termine-fab, #medi-fab, #medi-fab2, #intervall-fab, #uhrzeit-fab, #qr-rezept-akte, #qr-rezept-fail-akte, #diagnose-migraene, #diagnose-meni, #qr-rezept, #qr-rezept-fail, #rezept-arzt, #start-btn2, #range, #apo-fab {
   display: none;
 }

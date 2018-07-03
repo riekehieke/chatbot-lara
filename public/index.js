@@ -72,12 +72,9 @@ document.addEventListener('init', function (event) {
     page.querySelector('#apotheke-button').onclick = function () {
       document.querySelector('#nav').pushPage('pages/apotheke.html', { data: { title: 'Apotheke finden' } });
       setTimeout(function () {
-        document.getElementById("kein-problem").style.opacity = "1"
-        setTimeout(function () {
-          document.getElementById("bot-zeigen").style.opacity = "1"
-          document.getElementById("apo-list").style.opacity = "1"
-          document.getElementById("start-btn").style.opacity = "1"
-        }, 1000)
+        document.getElementById("bot-umkreis").style.opacity = "1"
+        document.getElementById("range").style.display = "block"
+        document.getElementById("apo-fab").style.display = "block"
       }, 1500)
     };
   }
@@ -672,6 +669,44 @@ function Uhrzeit() {
     var start = document.getElementById("start-btn")
     start.style.opacity = "1"
     start.scrollIntoView({ behavior: "smooth" })
+  }, 1500)
+}
+
+// APOTHEKE FINDEN
+// Umkreis auswerten
+function Apotheke() {
+  document.getElementById("range").style.display = "none"
+  document.getElementById("apo-fab").style.display = "none"
+  var user = document.getElementById('user-msg-umkreis')
+  var range = document.getElementById('range-apo').value
+  var zeigen = document.getElementById('bot-zeigen')
+  var umkreis = range * 10
+  if (range == 0) {
+    umkreis = 100
+  }
+  user.innerHTML = '<p>Bitte suche nach Apotheken im Umkreis von ' + umkreis + ' Metern.</p>'
+  user.style.opacity = "1"
+  var umkreisString = umkreis.toString()
+  var umkreisArray = umkreisString.split("")
+  var umkreisListe = umkreisArray[0]
+  var umkreisListe = parseInt(umkreisListe)
+  var umkreisListe = umkreisListe - 1
+  var entfernung1 = document.getElementById("entfernung-1")
+  var entfernung2 = document.getElementById("entfernung-2")
+  var entfernung3 = document.getElementById("entfernung-3")
+  var entfernung4 = document.getElementById("entfernung-4")
+  var entfernung5 = document.getElementById("entfernung-5")
+  entfernung1.innerHTML = "Entfernung: " + umkreisListe + "30 Meter"
+  entfernung2.innerHTML = "Entfernung: " + umkreisListe + "70 Meter"
+  entfernung3.innerHTML = "Entfernung: " + umkreisListe + "15 Meter"
+  entfernung4.innerHTML = "Entfernung: " + umkreisListe + "50 Meter"
+  entfernung5.innerHTML = "Entfernung: " + umkreisListe + "20 Meter"
+  setTimeout(function () {
+    zeigen.innerHTML = '<p>Hier sind alle Apotheken im Umkreis von ' + umkreis + ' Metern.</p>'
+    zeigen.style.opacity = "1"
+    document.getElementById("apo-list").style.opacity = "1"
+    document.getElementById("start-btn").style.opacity = "1"
+    document.getElementById("apo-list").scrollIntoView({ behavior: "smooth" })
   }, 1500)
 }
 
