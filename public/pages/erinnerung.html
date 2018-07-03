@@ -68,6 +68,14 @@
           Prednisolon
         </label>
       </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-radio input-id="medi-5" modifier="material" name="medis"></ons-radio>
+        </label>
+        <label for="medi-5" class="center" id="label-medi-5">
+          Eigenes Medikament eingeben
+        </label>
+      </ons-list-item>
     </ons-list>
     <div class="user-msg" id="medi-auswahl-user"></div>
     <div class="bot-msg" id="bot-intervall-frage">
@@ -130,6 +138,11 @@
     <ons-icon icon="md-check"></ons-icon>
   </ons-fab>
   <ons-fab position="bottom right" modifier="mini" id="intervall-fab" onclick="Intervall()">
+    <ons-icon icon="md-check"></ons-icon>
+  </ons-fab>
+  <!-- Input eigenes Medikament -->
+  <ons-input type="text" modifier="underbar material" id="medikament-input" placeholder="Eigenes Medikament hier eingeben"></ons-input>
+  <ons-fab position="bottom right" modifier="mini" id="medikament-fab" onclick="Eigene()">
     <ons-icon icon="md-check"></ons-icon>
   </ons-fab>
   <!-- Input Uhrzeit -->
