@@ -7,6 +7,10 @@
   height: 60px;
 }
 
+ons-button {
+  background-color: #36EBB4;
+}
+
 /* Index */
 #start-logo {
   display: flex;
