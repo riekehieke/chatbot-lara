@@ -1,6 +1,19 @@
 /* Allgemein */
-.text, h1, h2, h3, h4, h5, body, html, .page, .list, .text-input--material, .button {
+@font-face { font-family: 'Encode Sans Semi Expanded';
+             src: url('assets/fonts/EncodeSansSemiExpanded-Regular.ttf') format('truetype');
+            }
+@font-face { font-family: 'Encode Sans Semi Expanded';
+             src: url('assets/fonts/EncodeSansSemiExpanded-Medium.ttf') format('truetype');
+            font-weight: 600;
+            }
+
+.text, p, h1, h2, h3, h4, h5, body, html, .page, .list, .text-input--material, .button {
   font-family: 'Encode Sans Semi Expanded', sans-serif !important;
+}
+
+.fab {
+  background-color: #36EBB4 !important;
+  color: #ffffff !important;
 }
 
 .toolbar {
@@ -194,7 +207,31 @@ ons-button {
   padding: 0 3%;
 }
 .diagnose-gefaehrlich {
-  background-color:#E2572A;
+  background-color:#ff1744;
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+  border-radius: 18px;
+  width: 90%;
+  height: 40%;
+  margin: 5% 0;
+  padding: 0 3%;
+}
+
+.diagnose-arzt {
+  background-color:#ff6e40;
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+  border-radius: 18px;
+  width: 90%;
+  height: 40%;
+  margin: 5% 0;
+  padding: 0 3%;
+}
+
+.diagnose-entwarnung {
+  background-color:#36EBB4;
   color: #ffffff;
   text-align: center;
   box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
@@ -263,6 +300,6 @@ ons-button {
 }
 
 /* Display: None */
-#migraene-fab, #meni-fab, #aerzte-fab, #datum-fab, #termine-fab, #medi-fab, #medi-fab2, #intervall-fab, #uhrzeit-fab, #qr-rezept-akte, #qr-rezept-fail-akte, #diagnose-migraene, #diagnose-meni, #qr-rezept, #qr-rezept-fail, #rezept-arzt, #start-btn2, #range, #apo-fab, #medikament-fab {
+#migraene-fab, #meni-fab, #aerzte-fab, #datum-fab, #termine-fab, #medi-fab, #medi-fab2, #intervall-fab, #uhrzeit-fab, #qr-rezept-akte, #qr-rezept-fail-akte, #diagnose-migraene, #diagnose-meni, #qr-rezept, #qr-rezept-fail, #rezept-arzt, #start-btn2, #range, #apo-fab, #medikament-fab, #schild-fab, #mandel-fab, #kalt-fab, #blind-fab, #eisen-fab, #dia-fab, #diagnose-schild, #diagnose-kalt, #diagnose-mandel, #diagnose-blind, #diagnose-eisen, #diagnose-dia {
   display: none;
 }

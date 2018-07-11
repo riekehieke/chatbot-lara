@@ -1,10 +1,7 @@
 {
-  "name": "Lara - der Gesundheits-Chatbot",
   "short_name": "Lara",
-  "display": "standalone",
-  "background_color": "#fff",
+  "name": "Lara - der Gesundheits-Chatbot",
   "description": "Der Gesundheits-Chatbot Lara für Jeden",
-  "theme_color": "#36EBB4",
   "icons": [
     {
       "src": "\/android-icon-36x36.png",
@@ -41,6 +38,17 @@
       "sizes": "192x192",
       "type": "image\/png",
       "density": "4.0"
+    },
+    {
+      "src": "\/android-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image\/png",
+      "density": "5.0"
     }
-  ]
+  ],
+  "start_url": "index.html?launcher=true",
+  "orientation": "portrait",
+  "display": "standalone",
+  "theme_color": "#36EBB4",
+  "background_color": "#fff"
 }

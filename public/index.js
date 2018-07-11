@@ -120,6 +120,12 @@ function Beschwerden() {
     // !! Arrays mit Krankheiten
     var symptome1 = ["Kopfschmerzen", "hinter", "Augen", "morgens", "abends"]
     var symptome2 = ["Fieber", "steif", "Nacken"]
+    var symptome3 = ["zugenommen", "Gewicht", "Müde", "Müdigkeit", "nicht konzentrieren", "konzentrieren", "Konzentration", "Desinteresse", "Appetit", "Appetitlosigkeit", "Verstopfung"]
+    var symptome4 = ["Husten", "Schnupfen", "Nase läuft"]
+    var symptome5 = ["Halsschmerzen", "Mandeln", "gerötet", "rot", "geschwollen"]
+    var symptome6 = ["Übelkeit", "übel", "schlecht", "brechen", "übergeben", "Durchfall", "Bauch", "Bauchschmerzen"]
+    var symptome7 = ["vergesslich", "Vergesslichkeit", "Blässe", "blass", "brüchig", "Nägel"]
+    var symptome8 = ["Juckreiz", "jucken", "juckt", "unangenehm", "Durst", "Gewichtsverlust", "Gewicht", "wiege", "plötzlich", "Sehvermögen", "sehe"]
     // Arrays mit Krankheiten !!
     if (symptome1.some(el => user.includes(el))) {
       bubble.innerHTML = "<p>Haben Sie außerdem eines oder mehrere dieser Symptome?</p>"
@@ -140,6 +146,66 @@ function Beschwerden() {
       document.getElementById("symptome-liste").style.opacity = "1"
       document.getElementById("symptome-liste").scrollIntoView({ behavior: "smooth" });
       document.getElementById("meni-fab").style.display = "block"
+      return;
+    } else if (symptome3.some(el => user.includes(el))) {
+      bubble.innerHTML = "<p>Haben Sie außerdem eines oder mehrere dieser Symptome?</p>"
+      bubble.style.opacity = "1"
+      document.getElementById('label-check-1').innerHTML = "Antriebslosigkeit"
+      document.getElementById('label-check-2').innerHTML = "Verlangsamung"
+      document.getElementById('label-check-3').innerHTML = "Kälteempfindlichkeit"
+      document.getElementById("symptome-liste").style.opacity = "1"
+      document.getElementById("symptome-liste").scrollIntoView({ behavior: "smooth" });
+      document.getElementById("schild-fab").style.display = "block"
+      return;
+    } else if (symptome4.some(el => user.includes(el))) {
+      bubble.innerHTML = "<p>Haben Sie außerdem eines oder mehrere dieser Symptome?</p>"
+      bubble.style.opacity = "1"
+      document.getElementById('label-check-1').innerHTML = "Heiserkeit"
+      document.getElementById('label-check-2').innerHTML = "Halsschmerzen"
+      document.getElementById('label-check-3').innerHTML = "Frösteln"
+      document.getElementById("symptome-liste").style.opacity = "1"
+      document.getElementById("symptome-liste").scrollIntoView({ behavior: "smooth" });
+      document.getElementById("kalt-fab").style.display = "block"
+      return;
+    } else if (symptome5.some(el => user.includes(el))) {
+      bubble.innerHTML = "<p>Haben Sie außerdem eines oder mehrere dieser Symptome?</p>"
+      bubble.style.opacity = "1"
+      document.getElementById('label-check-1').innerHTML = "Schluckbeschwerden"
+      document.getElementById('label-check-2').innerHTML = "Abgeschlagenheit"
+      document.getElementById('label-check-3').innerHTML = "Mundgeruch"
+      document.getElementById("symptome-liste").style.opacity = "1"
+      document.getElementById("symptome-liste").scrollIntoView({ behavior: "smooth" });
+      document.getElementById("mandel-fab").style.display = "block"
+      return;
+    } else if (symptome6.some(el => user.includes(el))) {
+      bubble.innerHTML = "<p>Haben Sie außerdem eines oder mehrere dieser Symptome?</p>"
+      bubble.style.opacity = "1"
+      document.getElementById('label-check-1').innerHTML = "Verstopfung"
+      document.getElementById('label-check-2').innerHTML = "belegte Zunge"
+      document.getElementById('label-check-3').innerHTML = "Fieber"
+      document.getElementById("symptome-liste").style.opacity = "1"
+      document.getElementById("symptome-liste").scrollIntoView({ behavior: "smooth" });
+      document.getElementById("blind-fab").style.display = "block"
+      return;
+    } else if (symptome7.some(el => user.includes(el))) {
+      bubble.innerHTML = "<p>Haben Sie außerdem eines oder mehrere dieser Symptome?</p>"
+      bubble.style.opacity = "1"
+      document.getElementById('label-check-1').innerHTML = "Müdigkeit"
+      document.getElementById('label-check-2').innerHTML = "Infektanfälligkeit"
+      document.getElementById('label-check-3').innerHTML = "Depressionen"
+      document.getElementById("symptome-liste").style.opacity = "1"
+      document.getElementById("symptome-liste").scrollIntoView({ behavior: "smooth" });
+      document.getElementById("eisen-fab").style.display = "block"
+      return;
+    } else if (symptome8.some(el => user.includes(el))) {
+      bubble.innerHTML = "<p>Haben Sie außerdem eines oder mehrere dieser Symptome?</p>"
+      bubble.style.opacity = "1"
+      document.getElementById('label-check-1').innerHTML = "ausgeprägter Harndrang"
+      document.getElementById('label-check-2').innerHTML = "ständige Müdigkeit"
+      document.getElementById('label-check-3').innerHTML = "Übelkeit"
+      document.getElementById("symptome-liste").style.opacity = "1"
+      document.getElementById("symptome-liste").scrollIntoView({ behavior: "smooth" });
+      document.getElementById("dia-fab").style.display = "block"
       return;
     } else {
       bubble.innerHTML = "<p>Ich kann Ihre Symptome leider nicht auswerten. Bitte versuchen Sie es erneut.</p>"
@@ -268,6 +334,354 @@ function Meni() {
   setTimeout(function () {
     document.getElementById("diagnose-meni").style.display = "block"
     document.getElementById("diagnose-meni").scrollIntoView({ behavior: "smooth" });
+    var start = document.getElementById("start-btn")
+    start.style.opacity = "1"
+    start.scrollIntoView({ behavior: "smooth" })
+  }, 1000)
+}
+
+// Button: Schilddrüse weitere Beschwerden
+function Schild() {
+  var check1 = document.getElementById('check-1').checked
+  var check2 = document.getElementById('check-2').checked
+  var check3 = document.getElementById('check-3').checked
+  var label1 = "Antriebslosigkeit"
+  var label2 = "Verlangsamung"
+  var label3 = "Kälteempfindlichkeit"
+  if (check1 == true) {
+    var user = "<p>Ich habe " + label1 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check2 == true) {
+    var user = "<p>Ich habe " + label2 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check3 == true) {
+    var user = "<p>Ich habe " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check2 == true) {
+    var user = "<p>Ich habe " + label1 + " und " + label2 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check3 == true) {
+    var user = "<p>Ich habe " + label1 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check2 == true && check3 == true) {
+    var user = "<p>Ich habe " + label2 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check2 == true && check3 == true) {
+    var user = "<p>Ich habe " + label1 + ", " + label2 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == false && check2 == false && check3 == false) {
+    var user = "<p>Ich habe keine weiteren Beschwerden.</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  document.getElementById("schild-fab").style.display = "none"
+  setTimeout(function () {
+    document.getElementById("diagnose-schild").style.display = "block"
+    document.getElementById("diagnose-schild").scrollIntoView({ behavior: "smooth" });
+    var start = document.getElementById("start-btn")
+    start.style.opacity = "1"
+    start.scrollIntoView({ behavior: "smooth" })
+  }, 1000)
+}
+
+// Button: Schilddrüse weitere Beschwerden
+function Kalt() {
+  var check1 = document.getElementById('check-1').checked
+  var check2 = document.getElementById('check-2').checked
+  var check3 = document.getElementById('check-3').checked
+  var label1 = "Heiserkeit"
+  var label2 = "Halsschmerzen"
+  var label3 = "Frösteln"
+  if (check1 == true) {
+    var user = "<p>Ich habe " + label1 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check2 == true) {
+    var user = "<p>Ich habe " + label2 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check3 == true) {
+    var user = "<p>Ich habe " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check2 == true) {
+    var user = "<p>Ich habe " + label1 + " und " + label2 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check3 == true) {
+    var user = "<p>Ich habe " + label1 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check2 == true && check3 == true) {
+    var user = "<p>Ich habe " + label2 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check2 == true && check3 == true) {
+    var user = "<p>Ich habe " + label1 + ", " + label2 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == false && check2 == false && check3 == false) {
+    var user = "<p>Ich habe keine weiteren Beschwerden.</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  document.getElementById("kalt-fab").style.display = "none"
+  setTimeout(function () {
+    document.getElementById("diagnose-kalt").style.display = "block"
+    document.getElementById("diagnose-kalt").scrollIntoView({ behavior: "smooth" });
+    var start = document.getElementById("start-btn")
+    start.style.opacity = "1"
+    start.scrollIntoView({ behavior: "smooth" })
+  }, 1000)
+}
+
+// Button: Mandel weitere Beschwerden
+function Mandel() {
+  var check1 = document.getElementById('check-1').checked
+  var check2 = document.getElementById('check-2').checked
+  var check3 = document.getElementById('check-3').checked
+  var label1 = "Schluckbeschwerden"
+  var label2 = "Abgeschlagenheit"
+  var label3 = "Mundgeruch"
+  if (check1 == true) {
+    var user = "<p>Ich habe " + label1 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check2 == true) {
+    var user = "<p>Ich habe " + label2 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check3 == true) {
+    var user = "<p>Ich habe " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check2 == true) {
+    var user = "<p>Ich habe " + label1 + " und " + label2 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check3 == true) {
+    var user = "<p>Ich habe " + label1 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check2 == true && check3 == true) {
+    var user = "<p>Ich habe " + label2 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check2 == true && check3 == true) {
+    var user = "<p>Ich habe " + label1 + ", " + label2 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == false && check2 == false && check3 == false) {
+    var user = "<p>Ich habe keine weiteren Beschwerden.</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  document.getElementById("mandel-fab").style.display = "none"
+  setTimeout(function () {
+    document.getElementById("diagnose-mandel").style.display = "block"
+    document.getElementById("diagnose-mandel").scrollIntoView({ behavior: "smooth" });
+    var start = document.getElementById("start-btn")
+    start.style.opacity = "1"
+    start.scrollIntoView({ behavior: "smooth" })
+  }, 1000)
+}
+
+// Button: Blinddarm weitere Beschwerden
+function Blind() {
+  var check1 = document.getElementById('check-1').checked
+  var check2 = document.getElementById('check-2').checked
+  var check3 = document.getElementById('check-3').checked
+  var label1 = "Verstopfung"
+  var label2 = "eine belegte Zunge"
+  var label3 = "Fieber"
+  if (check1 == true) {
+    var user = "<p>Ich habe " + label1 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check2 == true) {
+    var user = "<p>Ich habe " + label2 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check3 == true) {
+    var user = "<p>Ich habe " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check2 == true) {
+    var user = "<p>Ich habe " + label1 + " und " + label2 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check3 == true) {
+    var user = "<p>Ich habe " + label1 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check2 == true && check3 == true) {
+    var user = "<p>Ich habe " + label2 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check2 == true && check3 == true) {
+    var user = "<p>Ich habe " + label1 + ", " + label2 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == false && check2 == false && check3 == false) {
+    var user = "<p>Ich habe keine weiteren Beschwerden.</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  document.getElementById("blind-fab").style.display = "none"
+  setTimeout(function () {
+    document.getElementById("diagnose-blind").style.display = "block"
+    document.getElementById("diagnose-blind").scrollIntoView({ behavior: "smooth" });
+    var start = document.getElementById("start-btn")
+    start.style.opacity = "1"
+    start.scrollIntoView({ behavior: "smooth" })
+  }, 1000)
+}
+
+// Button: Eisenmangel weitere Beschwerden
+function Eisen() {
+  var check1 = document.getElementById('check-1').checked
+  var check2 = document.getElementById('check-2').checked
+  var check3 = document.getElementById('check-3').checked
+  var label1 = "Müdigkeit"
+  var label2 = "Infektanfälligkeit"
+  var label3 = "Depressionen"
+  if (check1 == true) {
+    var user = "<p>Ich habe " + label1 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check2 == true) {
+    var user = "<p>Ich habe " + label2 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check3 == true) {
+    var user = "<p>Ich habe " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check2 == true) {
+    var user = "<p>Ich habe " + label1 + " und " + label2 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check3 == true) {
+    var user = "<p>Ich habe " + label1 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check2 == true && check3 == true) {
+    var user = "<p>Ich habe " + label2 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check2 == true && check3 == true) {
+    var user = "<p>Ich habe " + label1 + ", " + label2 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == false && check2 == false && check3 == false) {
+    var user = "<p>Ich habe keine weiteren Beschwerden.</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  document.getElementById("eisen-fab").style.display = "none"
+  setTimeout(function () {
+    document.getElementById("diagnose-eisen").style.display = "block"
+    document.getElementById("diagnose-eisen").scrollIntoView({ behavior: "smooth" });
+    var start = document.getElementById("start-btn")
+    start.style.opacity = "1"
+    start.scrollIntoView({ behavior: "smooth" })
+  }, 1000)
+}
+
+// Button: Diabetes weitere Beschwerden
+function Dia() {
+  var check1 = document.getElementById('check-1').checked
+  var check2 = document.getElementById('check-2').checked
+  var check3 = document.getElementById('check-3').checked
+  var label1 = "ausgeprägten Harndrang"
+  var label2 = "ständige Müdigkeit"
+  var label3 = "Übelkeit"
+  if (check1 == true) {
+    var user = "<p>Ich habe " + label1 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check2 == true) {
+    var user = "<p>Ich habe " + label2 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check3 == true) {
+    var user = "<p>Ich habe " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check2 == true) {
+    var user = "<p>Ich habe " + label1 + " und " + label2 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check3 == true) {
+    var user = "<p>Ich habe " + label1 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check2 == true && check3 == true) {
+    var user = "<p>Ich habe " + label2 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == true && check2 == true && check3 == true) {
+    var user = "<p>Ich habe " + label1 + ", " + label2 + " und " + label3 + ".</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  if (check1 == false && check2 == false && check3 == false) {
+    var user = "<p>Ich habe keine weiteren Beschwerden.</p>"
+    document.getElementById("user-liste").innerHTML = user
+    document.getElementById("user-liste").scrollIntoView({ behavior: "smooth" });
+  }
+  document.getElementById("dia-fab").style.display = "none"
+  setTimeout(function () {
+    document.getElementById("diagnose-dia").style.display = "block"
+    document.getElementById("diagnose-dia").scrollIntoView({ behavior: "smooth" });
     var start = document.getElementById("start-btn")
     start.style.opacity = "1"
     start.scrollIntoView({ behavior: "smooth" })

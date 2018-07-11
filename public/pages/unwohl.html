@@ -63,7 +63,7 @@
       </ons-list-item>
     </ons-list>
     <div class="user-msg" id="user-liste"></div>
-    <!-- Diagnose Migräne -->
+    <!-- Diagnosen -->
     <div class="diagnose-beobachten" id="diagnose-migraene">
       <h3>Beobachten!</h3>
       <p>Sie könnten Migräne haben. Sollten die Symptome bleiben oder sich verschlechtern, suchen Sie bitte in den nächsten
@@ -73,6 +73,36 @@
     <div class="diagnose-gefaehrlich" id="diagnose-meni">
       <h3>Gefährlich!</h3>
       <p>Sie könnten eine Meningitis (Hirnhautentzündung) haben. Sie sollten sich umgehend in die Notaufnahme begeben.</p>
+      <p>Bitte beachten Sie, dass diese Auswertung nur eine Empfehlung ist und keine ärztliche Diagnose ersetzt.</p>
+    </div>
+    <div class="diagnose-arzt" id="diagnose-schild">
+      <h3>Achtung!</h3>
+      <p>Sie könnten eine Hypothyreose (Schilddrüsenunterfunktion) haben. Sie sollten dringend einen Arzttermin machen.</p>
+      <p>Bitte beachten Sie, dass diese Auswertung nur eine Empfehlung ist und keine ärztliche Diagnose ersetzt.</p>
+    </div>
+    <div class="diagnose-entwarnung" id="diagnose-kalt">
+      <h3>Entwarnung!</h3>
+      <p>Sie könnten eine Erkältung (grippaler Infekt) haben. Es besteht kein Grund zum Arzt zu gehen. Ruhen Sie sich aus.</p>
+      <p>Bitte beachten Sie, dass diese Auswertung nur eine Empfehlung ist und keine ärztliche Diagnose ersetzt.</p>
+    </div>
+    <div class="diagnose-arzt" id="diagnose-mandel">
+      <h3>Achtung!</h3>
+      <p>Sie könnten eine Mandelentzündung haben. Sie sollten dringend einen Arzttermin machen.</p>
+      <p>Bitte beachten Sie, dass diese Auswertung nur eine Empfehlung ist und keine ärztliche Diagnose ersetzt.</p>
+    </div>
+    <div class="diagnose-gefaehrlich" id="diagnose-blind">
+      <h3>Gefahr!</h3>
+      <p>Sie könnten eine Blinddarmentzündung (Appendizits) haben. Sie sollten sich umgehend in die Notaufnahme begeben.</p>
+      <p>Bitte beachten Sie, dass diese Auswertung nur eine Empfehlung ist und keine ärztliche Diagnose ersetzt.</p>
+    </div>
+    <div class="diagnose-beobachten" id="diagnose-eisen">
+      <h3>Beobachten!</h3>
+      <p>Sie könnten unter Eisenmangel leiden. Sollten die Symptome bleiben oder sich verschlechtern, suchen Sie bitte in den nächsten Tagen einen Arzt auf!</p>
+      <p>Bitte beachten Sie, dass diese Auswertung nur eine Empfehlung ist und keine ärztliche Diagnose ersetzt.</p>
+    </div>
+    <div class="diagnose-gefaehrlich" id="diagnose-dia">
+      <h3>Gefährlich!</h3>
+      <p>Sie könnten Diabetes haben. Sie sollten sich umgehend in die Notaufnahme begeben.</p>
       <p>Bitte beachten Sie, dass diese Auswertung nur eine Empfehlung ist und keine ärztliche Diagnose ersetzt.</p>
     </div>
     <ons-button modifier="large" id="start-btn" onclick="Start()">Zurück zum Start</ons-button>
@@ -87,6 +117,24 @@
     <ons-icon icon="md-check"></ons-icon>
   </ons-fab>
   <ons-fab position="bottom right" modifier="mini" id="meni-fab" onclick="Meni()">
+    <ons-icon icon="md-check"></ons-icon>
+  </ons-fab>
+  <ons-fab position="bottom right" modifier="mini" id="schild-fab" onclick="Schild()">
+    <ons-icon icon="md-check"></ons-icon>
+  </ons-fab>
+  <ons-fab position="bottom right" modifier="mini" id="kalt-fab" onclick="Kalt()">
+    <ons-icon icon="md-check"></ons-icon>
+  </ons-fab>
+  <ons-fab position="bottom right" modifier="mini" id="mandel-fab" onclick="Mandel()">
+    <ons-icon icon="md-check"></ons-icon>
+  </ons-fab>
+  <ons-fab position="bottom right" modifier="mini" id="blind-fab" onclick="Blind()">
+    <ons-icon icon="md-check"></ons-icon>
+  </ons-fab>
+  <ons-fab position="bottom right" modifier="mini" id="eisen-fab" onclick="Eisen()">
+    <ons-icon icon="md-check"></ons-icon>
+  </ons-fab>
+  <ons-fab position="bottom right" modifier="mini" id="dia-fab" onclick="Dia()">
     <ons-icon icon="md-check"></ons-icon>
   </ons-fab>
 </ons-page>
