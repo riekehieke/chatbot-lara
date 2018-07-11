@@ -1,6 +1,6 @@
 /* Allgemein */
-.text {
-  font-family: 'Encode Sans Semi Expanded', sans-serif;
+.text, h1, h2, h3, h4, h5, body, html, .page, .list, .text-input--material, .button {
+  font-family: 'Encode Sans Semi Expanded', sans-serif !important;
 }
 
 .toolbar {
@@ -8,7 +8,11 @@
 }
 
 ons-button {
-  background-color: #36EBB4;
+  background-color: #36EBB4 !important;
+}
+
+#buttons .button {
+  background-color: #FFFFFF !important;
 }
 
 /* Index */
