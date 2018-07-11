@@ -393,6 +393,8 @@ function Schild() {
     document.getElementById("diagnose-schild").style.display = "block"
     document.getElementById("diagnose-schild").scrollIntoView({ behavior: "smooth" });
     var start = document.getElementById("start-btn")
+    var unwohlArzt = document.getElementById("unwohl-arzt")
+    unwohlArzt.style.display = "block"
     start.style.opacity = "1"
     start.scrollIntoView({ behavior: "smooth" })
   }, 1000)
@@ -509,6 +511,8 @@ function Mandel() {
     document.getElementById("diagnose-mandel").style.display = "block"
     document.getElementById("diagnose-mandel").scrollIntoView({ behavior: "smooth" });
     var start = document.getElementById("start-btn")
+    var unwohlArzt = document.getElementById("unwohl-arzt")
+    unwohlArzt.style.display = "block"
     start.style.opacity = "1"
     start.scrollIntoView({ behavior: "smooth" })
   }, 1000)
@@ -931,8 +935,8 @@ function Medi() {
       localStorage.setItem('rezept', 'no')
       var rezeptQRFail = document.getElementById("qr-rezept-fail")
       rezeptQRFail.style.display = "block"
-      var rezeptArzt = document.getElementById("rezept-arzt")
       var startBtn = document.getElementById("start-btn2")
+      var rezeptArzt = document.getElementById("rezept-arzt")
       rezeptArzt.style.display = "block"
       startBtn.style.display = "block"
       startBtn.scrollIntoView({ behavior: "smooth" })
@@ -1195,11 +1199,15 @@ function Akte() {
 }
 // Context-Menu Auswahl "Einstellungen"
 function Einstellungen() {
-  document.querySelector('#nav').pushPage('pages/einstellungen.html', { data: { title: 'Meine Akte' } });
+  document.querySelector('#nav').pushPage('pages/einstellungen.html', { data: { title: 'Einstellungen' } });
+}
+// Context-Menu Auswahl "Symptom-Katalog"
+function Katalog() {
+  document.querySelector('#nav').pushPage('pages/katalog.html', { data: { title: 'Symptom-Katalog' } });
 }
 // Context-Menu Auswahl "Impressum"
 function Impressum() {
-  document.querySelector('#nav').pushPage('pages/impressum.html', { data: { title: 'Meine Akte' } });
+  document.querySelector('#nav').pushPage('pages/impressum.html', { data: { title: 'Impressum' } });
 }
 
 // FUNKTIONEN BEI BUTTON CLICK

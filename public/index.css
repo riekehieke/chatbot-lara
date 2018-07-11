@@ -300,6 +300,6 @@ ons-button {
 }
 
 /* Display: None */
-#migraene-fab, #meni-fab, #aerzte-fab, #datum-fab, #termine-fab, #medi-fab, #medi-fab2, #intervall-fab, #uhrzeit-fab, #qr-rezept-akte, #qr-rezept-fail-akte, #diagnose-migraene, #diagnose-meni, #qr-rezept, #qr-rezept-fail, #rezept-arzt, #start-btn2, #range, #apo-fab, #medikament-fab, #schild-fab, #mandel-fab, #kalt-fab, #blind-fab, #eisen-fab, #dia-fab, #diagnose-schild, #diagnose-kalt, #diagnose-mandel, #diagnose-blind, #diagnose-eisen, #diagnose-dia {
+#migraene-fab, #meni-fab, #aerzte-fab, #datum-fab, #termine-fab, #medi-fab, #medi-fab2, #intervall-fab, #uhrzeit-fab, #qr-rezept-akte, #qr-rezept-fail-akte, #diagnose-migraene, #diagnose-meni, #qr-rezept, #qr-rezept-fail, #rezept-arzt, #start-btn2, #range, #apo-fab, #medikament-fab, #schild-fab, #mandel-fab, #kalt-fab, #blind-fab, #eisen-fab, #dia-fab, #diagnose-schild, #diagnose-kalt, #diagnose-mandel, #diagnose-blind, #diagnose-eisen, #diagnose-dia, #unwohl-arzt {
   display: none;
 }
