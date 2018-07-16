@@ -28,6 +28,12 @@ ons-button {
   background-color: #FFFFFF !important;
 }
 
+#buttons ons-button img {
+  height: 70%;
+  width: auto;
+  padding: 0 30% 0 0;
+}
+
 /* Index */
 #start-logo {
   display: flex;
@@ -51,6 +57,11 @@ ons-button {
 }
 .text-klein a {
   color: #000000;
+}
+
+#index-text {
+  width: 50%;
+  transform: translateX(50%);
 }
 
 /* Start Seite */
@@ -302,4 +313,16 @@ ons-button {
 /* Display: None */
 #migraene-fab, #meni-fab, #aerzte-fab, #datum-fab, #termine-fab, #medi-fab, #medi-fab2, #intervall-fab, #uhrzeit-fab, #qr-rezept-akte, #qr-rezept-fail-akte, #diagnose-migraene, #diagnose-meni, #qr-rezept, #qr-rezept-fail, #rezept-arzt, #start-btn2, #range, #apo-fab, #medikament-fab, #schild-fab, #mandel-fab, #kalt-fab, #blind-fab, #eisen-fab, #dia-fab, #diagnose-schild, #diagnose-kalt, #diagnose-mandel, #diagnose-blind, #diagnose-eisen, #diagnose-dia, #unwohl-arzt {
   display: none;
+}
+
+@media screen and (max-width: 600px){
+  #index-text {
+  width: 100%;
+  transform: translateX(0);
+  }
+  #buttons ons-button img {
+  height: 70%;
+  width: 50%;
+  padding: 0;
+  }
 }
