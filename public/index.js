@@ -3,9 +3,15 @@ window.onload = Reload
 // Registrierungscode-Eingabe
 function regCode() {
   var regCode = document.getElementById("reg-code").value
-  if (regCode === "789456123") {
-    document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } })
-    localStorage.setItem('regCode', 'yes')
+  if (regCode.length == 9) {
+    console.log("9");
+    if (regCode === "789456123") {
+      document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } })
+      localStorage.setItem('regCode', 'yes')
+    } else {
+      console.log("Hier Fehlerwarnung")
+      alert("Der von Ihnen eingegebene Code ist nicht gültig. Ein gültiger Code besteht aus 9 Ziffern. Bitte prüfen Sie Ihre Eingabe und versuchen Sie es erneut. Sollte Ihr Code weiterhin nicht akzeptiert werden, wenden Sie sich bitte an Ihre Krankenkasse.")
+    }
   }
 }
 
