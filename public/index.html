@@ -73,6 +73,48 @@
         </p>
       </ons-page>
     </template>
+    <!-- ALERTS EINSTELLUNGEN -->
+    <template id="alert-logout.html">
+      <ons-alert-dialog id="logout-alert">
+        <div class="alert-dialog-title">Warnung!</div>
+        <div class="alert-dialog-content">
+          Mit Klick auf "OK" werden Sie ausgeloggt und können Lara nicht weiter nutzen. Um Lara wieder nutzen zu können, müssen Sie
+          Ihren Registrierungscode erneut eingeben.
+        </div>
+        <div class="alert-dialog-footer">
+          <ons-alert-dialog-button onclick="hideLogoutAlert()">Abbrechen</ons-alert-dialog-button>
+          <ons-alert-dialog-button onclick="Logout()">OK</ons-alert-dialog-button>
+        </div>
+      </ons-alert-dialog>
+    </template>
+    <template id="alert-clear.html">
+      <ons-alert-dialog id="clear-alert">
+        <div class="alert-dialog-title">Warnung!</div>
+        <div class="alert-dialog-content">
+          Mit Klick auf "OK" werden Ihre angeforderten digitalen Rezepte gelöscht. Wenn Sie wieder digitale Rezepte benötigen, können
+          Sie diese mit Laras Hilfe bei Ihrem Arzt anfordern.
+        </div>
+        <div class="alert-dialog-footer">
+          <ons-alert-dialog-button onclick="hideClearAlert()">Abbrechen</ons-alert-dialog-button>
+          <ons-alert-dialog-button onclick="Clear()">OK</ons-alert-dialog-button>
+        </div>
+      </ons-alert-dialog>
+    </template>
+    <template id="alert-reset.html">
+      <ons-alert-dialog id="reset-alert">
+        <div class="alert-dialog-title">Warnung!</div>
+        <div class="alert-dialog-content">
+          Mit Klick auf "OK" werden Ihre angeforderten digitalen Rezepte gelöscht und Sie werden ausgeloggt. Wenn Sie die App wieder
+          nutzen möchten, müssen Sie Ihren Registrierungscode erneut eingeben. Wenn Sie wieder digitale Rezepte benötigen,
+          können Sie diese mit Laras Hilfe bei Ihrem Arzt anfordern.
+        </div>
+        <div class="alert-dialog-footer">
+          <ons-alert-dialog-button onclick="hideResetAlert()">Abbrechen</ons-alert-dialog-button>
+          <ons-alert-dialog-button onclick="Reset()">OK</ons-alert-dialog-button>
+        </div>
+      </ons-alert-dialog>
+    </template>
+
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", function () {

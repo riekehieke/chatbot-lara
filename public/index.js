@@ -8,6 +8,12 @@ function regCode() {
     if (regCode === "789456123") {
       document.querySelector('#nav').pushPage('pages/start.html', { data: { title: 'Start' } })
       localStorage.setItem('regCode', 'yes')
+      var rezept = localStorage.getItem('rezept')
+      console.log(rezept)
+      if (!rezept) {
+        localStorage.setItem('rezept', 'no')
+        console.log("rezept no")
+      }
     } else {
       console.log("Hier Fehlerwarnung")
       alert("Der von Ihnen eingegebene Code ist nicht gültig. Ein gültiger Code besteht aus 9 Ziffern. Bitte prüfen Sie Ihre Eingabe und versuchen Sie es erneut. Sollte Ihr Code weiterhin nicht akzeptiert werden, wenden Sie sich bitte an Ihre Krankenkasse.")
@@ -1220,18 +1226,71 @@ function Impressum() {
 // Rezept Storage löschen
 function Clear() {
   localStorage.setItem('rezept', 'no')
-  document.querySelector("#qr-rezept-akte").style.display = "none"
-  document.getElementById("qr-rezept-fail-akte").style.display = "block"
+  hideClearAlert()
+}
+// Clear Alert
+function ClearAlert() {
+  var dialog = document.getElementById('clear-alert');
+  if (dialog) {
+    dialog.show();
+  } else {
+    ons.createElement('alert-clear.html', { append: true })
+      .then(function (dialog) {
+        dialog.show();
+      });
+  }
+}
+// Hide Clear Alert
+function hideClearAlert() {
+  document
+    .getElementById('clear-alert')
+    .hide();
 }
 // RegCode Storage löschen
 function Logout() {
   localStorage.setItem('regCode', 'no')
   location.reload()
 }
+// Logout Alert
+function LogoutAlert() {
+  var dialog = document.getElementById('logout-alert');
+  if (dialog) {
+    dialog.show();
+  } else {
+    ons.createElement('alert-logout.html', { append: true })
+      .then(function (dialog) {
+        dialog.show();
+      });
+  }
+}
+// Hide Logout Alert
+function hideLogoutAlert() {
+  document
+    .getElementById('logout-alert')
+    .hide();
+}
 // LocalStorage komplett löschen
 function Reset() {
   localStorage.clear()
   location.reload()
+}
+// Reset Alert
+function ResetAlert() {
+  var dialog = document.getElementById('reset-alert');
+  if (dialog) {
+    dialog.show();
+  } else {
+    ons.createElement('alert-reset.html', { append: true })
+      .then(function (dialog) {
+        dialog.show();
+      });
+  }
+}
+// Hide Logout Alert
+function hideResetAlert() {
+  document
+    .getElementById('reset-alert')
+    .hide();
 }
 // Zurück zum Start
 function Start() {
